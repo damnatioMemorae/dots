@@ -1,0 +1,13 @@
+[Unit]
+Description=Enable Turboboost
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/bin/sleep 20
+ExecStart=/usr/bin/turboboost
+ExecStart=/usr/bin/cpupower frequency-set -u 2000MHz
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

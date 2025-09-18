@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+layout=$(hyprctl devices | grep -m 1 "active keymap" | awk -F: '{print $2}' | xargs)
+
+case "$layout" in
+        "English (US)")
+        #         layout=""
+        #         ;;
+        # Russian)
+        #         layout=""
+
+                layout="🮋 "
+                ;;
+        Russian)
+                layout="🬋 "
+                ;;
+        *) echo "$layout" ;;
+esac
+
+submap=$(hyprctl activewindow -j | jq -r ".submap")
+
+if [ -n "$submap" ]; then
+        echo "$layout"
+else
+        echo "  $layout"
+fi

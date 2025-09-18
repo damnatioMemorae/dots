@@ -1,0 +1,60 @@
+#!/usr/bin/bash
+
+get_battery_icon()
+{
+        local bat=$1
+        if [[ "$bat" -eq 0 ]]; then
+                echo " "
+        elif [[ "$bat" -lt 10 ]]; then
+                echo "▁"
+        elif [[ "$bat" -lt 25 ]]; then
+                echo "▂"
+        elif [[ "$bat" -lt 40 ]]; then
+                echo "▃"
+        elif [[ "$bat" -lt 55 ]]; then
+                echo "▄"
+        elif [[ "$bat" -lt 70 ]]; then
+                echo "▅"
+        elif [[ "$bat" -lt 85 ]]; then
+                echo "▆"
+        elif [[ "$bat" -lt 100 ]]; then
+                echo "▇"
+        else
+                echo "█"
+        fi
+
+        # symbol_number="$bat"
+        #
+        # symbol_number=$(echo "$symbol_number" | sed \
+        #         -e 's/1//g' \
+        #         -e 's/2//g' \
+        #         -e 's/3//g' \
+        #         -e 's/4//g' \
+        #         -e 's/5//g' \
+        #         -e 's/6//g' \
+        #         -e 's/7//g' \
+        #         -e 's/8//g' \
+        #         -e 's/9//g' \
+        #         -e 's/0//g')
+        # echo "$symbol_number"
+}
+
+if command -v acpi &>/dev/null; then
+        battery=$(acpi -b | grep -m 1 -oP '\d+%' | tr -d '%')
+        if [[ "$battery" -eq 0 ]]; then
+                echo " "
+        else
+                echo "$(get_battery_icon "$battery")"
+        fi
+
+elif command -v upower &>/dev/null; then
+        battery=$(acpi -b | grep -m 1 -oP '\d+%' | tr -d '%')
+        if [[ "$battery" -eq 0 ]]; then
+                echo " "
+        else
+                echo "$(get_battery_icon "$battery")"
+        fi
+
+else
+        echo "N/A"
+fi

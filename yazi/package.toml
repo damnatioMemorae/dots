@@ -1,0 +1,77 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "de53d90"
+hash = "3996fc74044bc44144b323686f887e1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:hide-preview"
+rev = "0725851"
+hash = "b25c2acb08d9ca5ff5cf71ea764fed8d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:max-preview"
+rev = "0725851"
+hash = "15b2ff7f6563c14d5b2e93b3e9da35de"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "0725851"
+hash = "b482f4f2d3c4e0aa3f8db89a95699439"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:lsar"
+rev = "0725851"
+hash = "fc2c9438d402f7c4ac230aebf5a746d1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "0725851"
+hash = "f28138c2e11e87962b66d583fef724c3"
+
+[[plugin.deps]]
+use = "dawsers/fuse-archive"
+rev = "a58327c"
+hash = "6a6d24880ce7666048fb81ad758c48d3"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "92f78dc"
+hash = "dd97eede8e20e59cd2604e8006e470e2"
+
+[[plugin.deps]]
+use = "boydaihungst/file-extra-metadata"
+rev = "031999d"
+hash = "e55d11c23b7b70cf7015503f24d42205"
+
+[[plugin.deps]]
+use = "wylie102/duckdb"
+rev = "02f902d"
+hash = "9893839d5134aaecf6fafbeff6cac18e"
+
+[[plugin.deps]]
+use = "pareix/telegram-send"
+rev = "6f91162"
+hash = "f84d828d2b77607c6b066f8cd85598b7"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "63f9650"
+hash = "d5d4f3527592da5fbe77fd6f51815f80"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "63f9650"
+hash = "bf6f074cd41ee33c3360341d168f9733"
+
+[[plugin.deps]]
+use = "exakey/double-pane"
+rev = "d3af1a3"
+hash = "204bea92c5b12a44412c91dc50c664ed"
+
+[[plugin.deps]]
+use = "kirasok/torrent-preview"
+rev = "f465282"
+hash = "b89b46a15035a51d010a254858ba9741"
+
+[flavor]
+deps = []

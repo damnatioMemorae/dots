@@ -1,0 +1,62 @@
+#!/usr/bin/bash
+
+get_volume_icon()
+{
+        local vol=$1
+        if [[ "$vol" -eq 0 ]]; then
+                echo " "
+        elif [[ "$vol" -lt 10 ]]; then
+                echo "▁"
+        elif [[ "$vol" -lt 25 ]]; then
+                echo "▂"
+        elif [[ "$vol" -lt 40 ]]; then
+                echo "▃"
+        elif [[ "$vol" -lt 55 ]]; then
+                echo "▄"
+        elif [[ "$vol" -lt 70 ]]; then
+                echo "▅"
+        elif [[ "$vol" -lt 85 ]]; then
+                echo "▆"
+        elif [[ "$vol" -lt 100 ]]; then
+                echo "▇"
+        else
+                echo "█"
+        fi
+
+        # symbol_number="$vol"
+        #
+        # symbol_number=$(echo "$symbol_number" | sed \
+        #         -e 's/1//g' \
+        #         -e 's/2//g' \
+        #         -e 's/3//g' \
+        #         -e 's/4//g' \
+        #         -e 's/5//g' \
+        #         -e 's/6//g' \
+        #         -e 's/7//g' \
+        #         -e 's/8//g' \
+        #         -e 's/9//g' \
+        #         -e 's/0//g')
+        # echo "$symbol_number"
+}
+
+if command -v pamixer &>/dev/null; then
+        muted=$(pamixer --get-mute)
+        volume=$(pamixer --get-volume)
+        if [[ "$muted" == "true" || "$volume" -eq 0 ]]; then
+                echo " "
+        else
+                echo "$(get_volume_icon "$volume")"
+        fi
+
+elif command -v amixer &>/dev/null; then
+        muted=$(amixer get Master | grep '\[off\]')
+        volume=$(amixer get Master | grep -oP '\[\d+%\]' | head -1 | grep -oP '\d+')
+        if [[ -n "$muted" || "$volume" -eq 0 ]]; then
+                echo " "
+        else
+                echo "$(get_volume_icon "$volume")"
+        fi
+
+else
+        echo "N/A"
+fi

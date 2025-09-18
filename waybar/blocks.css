@@ -1,0 +1,441 @@
+/* Global Styling */
+* {
+        font-family: "Monocraft";
+        font-weight: normal;
+        /*font-size: 13.9px;*/
+        font-size: 14px;
+        min-height: 12px;
+}
+
+@import "theme.css";
+
+.main {
+        background: @none;
+}
+
+.workspaces {
+        background: @main-bg;
+        /* background: rgba(0,0,0,0); */
+        /* background-image: url("/home/q/.config/hyde/themes/Darkpuccin/wallpapers/dodge left.png") */
+}
+
+#custom-updates {
+        color: #add8e6;
+        /* background: #29313e; */
+        /* background: @main-bg; */
+        /* margin-top: 0px; */
+        /* margin-bottom: 0px; */
+}
+
+#custom-recording {
+        color: #f38ba8;
+}
+
+#language {
+        color: #add8e6;
+        /* background: #33313a; */
+        padding-right: 8px;
+        /* margin-top: 9px; */
+        /* margin-bottom: 10px; */
+}
+
+#submap {
+        color: #add8e6;
+        /* background: #32283a; */
+        padding-right: 8px;
+        /* margin-top: 9px; */
+        /* margin-bottom: 10px; */
+}
+
+#cava {
+        color: @blank-bg;
+        background-color: @main-bg;
+        /* margin-left: 8px; */
+        margin-right: 0px;
+        padding-left: 4px;
+        padding-right: 4px;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+}
+
+#custom-media {
+        color: @main-fg;
+        background-color: @main-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        /* margin-left: 8px; */
+        margin-right: 0px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+        padding-right: 8px;
+        padding-left: 10px;
+}
+
+#backlight.icon {
+        color: @blank-fg;
+        background: @blank-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        /* margin-left: 8px; */
+        margin-right: 0px;
+        /* padding-top: 1px; */
+        /* padding-bottom: 0px; */
+        padding-left: 8px;
+        padding-right: 8px;
+}
+
+#backlight.icon.min {
+        color: @max;
+        background: @min;
+}
+
+#backlight.icon.midl {
+        color: @midh;
+        background: @midl;
+}
+
+#backlight.icon.mid {
+        color: @min;
+        background: @mid;
+}
+
+#backlight.icon.midh {
+        color: @min;
+        background: @midh;
+}
+
+#backlight.icon.max {
+        color: @main-bg;
+        background: @max;
+}
+
+#backlight {
+        color: @main-fg;
+        background: @block-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        /*margin-right: 10px;*/
+        margin-right: 0px;
+        padding-left: 6px;
+        padding-right: 6px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#clock {
+        color: @module-fg;
+        background: @main-bg;
+        /*background: @main-bg;*/
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+}
+
+#pulseaudio.icon {
+        color: @blank-fg;
+        background: @blank-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-left: 0px;
+        margin-right: 0px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+        padding-left: 8px;
+        padding-right: 8px;
+}
+
+#pulseaudio.icon.min {
+        color: @max;
+        background: @min;
+}
+
+#pulseaudio.icon.midl {
+        color: @midh;
+        background: @midl;
+}
+
+#pulseaudio.icon.mid {
+        color: @min;
+        background: @mid;
+}
+
+#pulseaudio.icon.midh {
+        color: @min;
+        background: @midh;
+}
+
+#pulseaudio.icon.max {
+        color: @main-bg;
+        background: @max;
+}
+
+#pulseaudio {
+        color: @main-fg;
+        background: @block-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 0px;
+        padding-left: 6px;
+        padding-right: 6px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#custom-wifi {
+        color: @main-bg;
+        background: @norm;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 0px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+        padding-left: 7px;
+        padding-right: 11px;
+}
+
+#network {
+        color: @main-fg;
+        background: @block-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#cpu.icon {
+        color: @main-bg;
+        background: @norm;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 0px;
+        padding-left: 6px;
+        padding-right: 12px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#cpu.icon.norm {
+        color: @main-bg;
+        background: @norm;
+}
+
+#cpu.icon.warning {
+        color: @warningTr;
+        background: @warning;
+}
+
+#cpu.icon.critical {
+        color: @criticalTr;
+        background: @critical;
+}
+
+#cpu {
+        color: @main-fg;
+        background: @block-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#cpu.norm {
+        color: @norm;
+        background: @block-bg;
+}
+
+#cpu.warning {
+        color: @warning;
+        background: @warningTr;
+}
+
+#cpu.critical {
+        color: @critical;
+        background: @criticalTr;
+}
+
+#custom-cpuinfo.icon {
+        color: @main-bg;
+        background: @norm;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 0px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+        padding-left: 10px;
+        padding-right: 8px;
+}
+
+#custom-cpuinfo {
+        color: @main-fg;
+        background: @block-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#custom-gpuinfo.icon {
+        color: @main-bg;
+        background: @norm;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 0px;
+        padding-left: 6px;
+        padding-right: 11px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#custom-gpuinfo {
+        color: @main-fg;
+        background: @block-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#memory.icon {
+        color: @main-bg;
+        background: @norm;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 0px;
+        /*padding-left: 6px;*/
+        /*padding-right: 11px;*/
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+        padding-left: 8px;
+        padding-right: 10px;
+}
+
+#memory.icon.norm {
+        color: @main-bg;
+        background: @norm;
+}
+
+#memory.icon.warning {
+        color: @warningTr;
+        background: @warning;
+}
+
+#memory.icon.critical {
+        color: @criticalTr;
+        background: @critical;
+}
+
+#memory {
+        color: @main-fg;
+        background: @block-bg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#memory.norm {
+        color: @norm;
+        background: @block-bg;
+}
+
+#memory.warning {
+        color: @warning;
+        background: @warningTr;
+}
+
+#memory.critical {
+        color: @critical;
+        background: @criticalTr;
+}
+
+#battery.icon {
+        color: @blank-fg;
+        background: @main-fg;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        margin-right: 0px;
+        padding-left: 9px;
+        padding-right: 8px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#battery.icon.full {
+        color: @fullTr;
+        background: @full;
+}
+
+#battery.icon.good {
+        color: @goodTr;
+        background: @good;
+}
+
+#battery.icon.warning {
+        color: @warningTr;
+        background: @warning;
+}
+
+#battery.icon.critical {
+        color: @criticalTr;
+        background: @critical;
+}
+
+#battery.icon.charging {
+        color: @chargingTr;
+        background: @charging;
+}
+
+#battery {
+        color: @main-fg;
+        background: @media;
+        /* margin-top: 6px; */
+        /* margin-bottom: 6px; */
+        /* margin-right: 8px; */
+        padding-left: 8px;
+        padding-right: 5px;
+        /* padding-top: 0px; */
+        /* padding-bottom: 0px; */
+}
+
+#battery.full {
+        color: @full;
+        background: @fullTr;
+}
+
+#battery.good {
+        color: @good;
+        background: @goodTr;
+}
+
+#battery.warning {
+        color: @warning;
+        background: @warningTr;
+}
+
+#battery.critical {
+        color: @critical;
+        background: @criticalTr;
+}
+
+#battery.charging {
+        color: @charging;
+        background: @chargingTr;
+}

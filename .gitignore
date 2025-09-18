@@ -38,13 +38,13 @@
 !/rofi/
 !/silicon/
 !/spicetify/
-# !/swappy/
-# !/sway/
-# !/systemd/
-# !/tg/
-# !/tmux/
-# !/waybar/
-# !/wireplumber/
-# !/yazi/
-# !/yt-dlg/
-# !/zathura/
+!/swappy/
+!/sway/
+!/systemd/
+!/tg/
+!/tmux/
+!/waybar/
+!/wireplumber/
+!/yazi/
+!/yt-dlg/
+!/zathura/

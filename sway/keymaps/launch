@@ -1,0 +1,10 @@
+bindsym $mod+Return    exec $term
+bindsym $mod+f         exec $firefox
+bindsym $mod+d         exec $discord
+bindsym Alt+space      exec pkill -x rofi || $menu
+
+bindsym $mod+Shift+w   exec $scrPath/swwwallselect.sh
+bindsym $mod+c         exec $scrPath/cpu.sh
+
+bindsym $mod+Ctrl+up   exec $waybar t
+bindsym $mod+Ctrl+down exec $waybar b

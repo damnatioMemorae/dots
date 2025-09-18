@@ -1,0 +1,405 @@
+/* Global Styling */
+* {
+        font-family: "Monocraft";
+        font-weight: normal;
+        /*font-size: 13.9px;*/
+        font-size: 14px;
+        min-height: 12px;
+}
+
+@import "theme.css";
+
+window#waybar {
+        /* background: @main-bg; */
+        background: rgba(0,0,0,0);
+        /* background-image: url("/home/q/.config/hyde/themes/Darkpuccin/wallpapers/dodge left.png") */
+}
+
+#custom-menu {
+        color: @main-bg;
+        background: @main-fg;
+        padding-left: 12px;
+        padding-right: 12px;
+}
+
+#custom-updates {
+        color: @main-bg;
+        background: @main-fg;
+        padding-left: 12px;
+        padding-right: 12px;
+}
+
+#workspaces button.empty {
+        color: @empty-fg;
+        background-color: @main-bg;
+        border-radius: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 4px;
+        padding-right: 4px;
+        /*animation: ws_normal 20s ease-in-out 1;*/
+        animation: none;
+}
+
+#workspaces button {
+        color: @main-fg;
+        background-color: @main-bg;
+        border-radius: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 4px;
+        padding-right: 4px;
+        /*animation: ws_normal 20s ease-in-out 1;*/
+        animation: none;
+}
+
+#workspaces button.active {
+        color: @red;
+        background: @main-bg;
+        animation: ws_active 20s ease-in-out 1;
+        transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button:hover {
+        color: @module-fg;
+        background: @main-bg;
+        /*animation: ws_hover 20s ease-in-out 1;*/
+        /*transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.682);*/
+        animation: none;
+        transition: none;
+}
+
+#language {
+        color: @module-fg;
+        background: @main-bg;
+        margin-left: 0px;
+        margin-top: 6px;
+        margin-bottom: 6px;
+}
+
+#submap {
+        color: @module-fg;
+        background: @main-bg;
+        margin-left: 8px;
+        margin-right: 8px;
+}
+
+#cava {
+        color: @main-bg;
+        background-color: @main-fg;
+        padding-left: 12px;
+        padding-right: 12px;
+}
+
+#custom-media {
+        color: @main-fg;
+        background-color: @media;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-left: 8px;
+        margin-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-right: 8px;
+        padding-left: 10px;
+}
+
+#backlight {
+        color: @blank-fg;
+        background: @blank-bg;
+        padding-left: 12px;
+        padding-right: 12px;
+}
+
+#backlight.min {
+        color: @max;
+        background: @min;
+}
+
+#backlight.midl {
+        color: @midh;
+        background: @midl;
+}
+
+#backlight.mid {
+        color: @min;
+        background: @mid;
+}
+
+#backlight.midh {
+        color: @min;
+        background: @midh;
+}
+
+#backlight.max {
+        color: @min;
+        background: @max;
+}
+
+#clock {
+        color: @module-fg;
+        background: @main-bg;
+        /*background: @main-bg;*/
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+}
+
+#pulseaudio {
+        color: @blank-fg;
+        background: @blank-bg;
+        padding-left: 12px;
+        padding-right: 12px;
+}
+
+#pulseaudio.min {
+        color: @max;
+        background: @min;
+}
+
+#pulseaudio.midl {
+        color: @midh;
+        background: @midl;
+}
+
+#pulseaudio.mid {
+        color: @min;
+        background: @mid;
+}
+
+#pulseaudio.midh {
+        color: @min;
+        background: @midh;
+}
+
+#pulseaudio.max {
+        color: @min;
+        background: @max;
+}
+
+#custom-wifi {
+        color: @blank-fg;
+        background: @main-fg;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 7px;
+        padding-right: 11px;
+}
+
+#network {
+        color: @main-fg;
+        background: @media;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+}
+
+#cpu.icon {
+        color: @blank-fg;
+        background: @main-fg;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 0px;
+        padding-left: 6px;
+        padding-right: 12px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+}
+
+#cpu.icon.norm {
+        color: @blank-fg;
+        background: @main-fg;
+}
+
+#cpu.icon.warning {
+        color: @blank-fg;
+        background: @warning;
+}
+
+#cpu.icon.critical {
+        color: @blank-fg;
+        background: @critical;
+}
+
+#cpu {
+        color: @main-fg;
+        background: @media;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+}
+
+#cpu.norm {
+        color: @main-fg;
+        background: @media;
+}
+
+#cpu.warning {
+        color: @warning;
+        background: @media;
+}
+
+#cpu.critical {
+        color: @critical;
+        background: @media;
+}
+
+#custom-cpuinfo.icon {
+        color: @blank-fg;
+        background: @main-fg;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        padding-right: 8px;
+}
+
+#custom-cpuinfo {
+        color: @main-fg;
+        background: @media;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+}
+
+#custom-gpuinfo.icon {
+        color: @blank-fg;
+        background: @main-fg;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 0px;
+        padding-left: 6px;
+        padding-right: 11px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+}
+
+#custom-gpuinfo {
+        color: @main-fg;
+        background: @media;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+}
+
+#memory.icon {
+        color: @blank-fg;
+        background: @main-fg;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 0px;
+        /*padding-left: 6px;*/
+        /*padding-right: 11px;*/
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 8px;
+        padding-right: 10px;
+}
+
+#memory.icon.norm {
+        color: @blank-fg;
+        background: @main-fg;
+}
+
+#memory.icon.warning {
+        color: @blank-fg;
+        background: @warning;
+}
+
+#memory.icon.critical {
+        color: @blank-fg;
+        background: @critical;
+}
+
+#memory {
+        color: @main-fg;
+        background: @media;
+        margin-top: 6px;
+        margin-bottom: 6px;
+        margin-right: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+}
+
+#memory.norm {
+        color: @norm;
+        background: @media;
+}
+
+#memory.warning {
+        color: @warning;
+        background: @media;
+}
+
+#memory.critical {
+        color: @critical;
+        background: @media;
+}
+
+#battery {
+        color: @blank-fg;
+        background: @main-fg;
+        padding-left: 12px;
+        padding-right: 12px;
+}
+
+#battery.full {
+        color: @blank-fg;
+        background: @full;
+}
+
+#battery.good {
+        color: @blank-fg;
+        background: @good;
+}
+
+#battery.warning {
+        color: @blank-fg;
+        background: @warning;
+}
+
+#battery.critical {
+        color: @blank-fg;
+        background: @critical;
+}
+
+#battery.charging {
+        color: @blank-fg;
+        background: @charging;
+}

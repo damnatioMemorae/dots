@@ -1,0 +1,15 @@
+font Monocraft 10
+
+default_border          none
+default_floating_border none
+hide_edge_borders       smart
+
+smart_gaps off
+gaps inner 48
+gaps outer -8
+
+client.focused          #11111b #11111b #cdd6f4 #11111b   #11111b
+client.focused_inactive #313244 #313244 #9399b2 #313244   #313244
+client.unfocused        #313244 #313244 #9399b2 #313244   #313244
+client.urgent           #F38BA8 #F38BA8 #11111b #F38BA8   #F38BA8
+client.placeholder      #1D2021 #0C0C0C #11111b #000000   #0C0C0C

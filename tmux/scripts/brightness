@@ -1,0 +1,51 @@
+#!/usr/bin/bash
+
+get_brightness_icon()
+{
+        local bright=$1
+        if [[ "$bright" -eq 0 ]]; then
+                echo " "
+        elif [[ "$bright" -lt 10 ]]; then
+                echo "▁"
+        elif [[ "$bright" -lt 25 ]]; then
+                echo "▂"
+        elif [[ "$bright" -lt 40 ]]; then
+                echo "▃"
+        elif [[ "$bright" -lt 55 ]]; then
+                echo "▄"
+        elif [[ "$bright" -lt 70 ]]; then
+                echo "▅"
+        elif [[ "$bright" -lt 85 ]]; then
+                echo "▆"
+        elif [[ "$bright" -lt 100 ]]; then
+                echo "▇"
+        else
+                echo "█"
+        fi
+
+        # symbol_number="$bright"
+        #
+        # symbol_number=$(echo "$symbol_number" | sed \
+        #         -e 's/1//g' \
+        #         -e 's/2//g' \
+        #         -e 's/3//g' \
+        #         -e 's/4//g' \
+        #         -e 's/5//g' \
+        #         -e 's/6//g' \
+        #         -e 's/7//g' \
+        #         -e 's/8//g' \
+        #         -e 's/9//g' \
+        #         -e 's/0//g')
+        # echo "$symbol_number"
+}
+
+if command -v acpi &>/dev/null; then
+        brightness=$(brightnessctl get)
+        if [[ "$brightness" -eq 0 ]]; then
+                echo " "
+        else
+                echo "$(get_brightness_icon "$brightness")"
+        fi
+else
+        echo "N/A"
+fi

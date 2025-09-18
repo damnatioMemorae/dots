@@ -1,0 +1,38 @@
+set $scrPath $HOME/.local/share/bin
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+
+# set $term kitty
+set $term      ghostty
+set $browser   firefox
+set $discord   vesktop
+set $telegram  telegram-desktop
+
+set $menu      $HOME/.local/share/bin/rofilaunch.sh
+set $waybar    $HOME/.local/share/bin/waybarswitch.sh
+set $wallpaper $HOME/.local/share/bin/swwwallpaper.sh
+
+exec $waybar -t
+exec $wallpaper
+exec dunst
+
+input "type:keyboard" {
+        xkb_layout  us,ru
+        xkb_options caps:swapescape
+        xkb_numlock enabled
+}
+
+input "1739:52781:SYNA2BA6:00_06CB:CE2D_Touchpad" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+}
+
+floating_modifier $mod normal
+include /etc/sway/config.d/*
+include $HOME/.config/sway/keymaps/general
+include $HOME/.config/sway/keymaps/launch
+include $HOME/.config/sway/decorations

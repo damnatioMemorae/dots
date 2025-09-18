@@ -1,0 +1,170 @@
+[mgr]
+        ratio          = [3, 3, 3]
+        show_hidden    = true
+        show_symlink   = true
+        sort_by        = "alphabetical"
+        linemode       = "size"
+        sort_sensitive = true
+        sort_dir_first = true
+
+
+[preview]
+        tab_size      = 3
+        image_quality = 90
+        max_width     = 10000
+        max_height    = 10000
+
+
+[opener]
+text = [
+        { run = '$EDITOR "$@"', block = true },
+        { run = 'nvim "$@"',    block = true },
+        { run = 'vim "$@"',     block = true },
+]
+
+pdff = [
+        { run = 'tdf "$@"', block = true },
+        # { run = 'zathura "$@"', block = true },
+]
+
+image = [
+        { run = 'feh "$@"', display_name = "Open" },
+]
+
+video = [
+        { run = 'mpv --loop --force-window "$@" &' },
+]
+
+audio = [
+        # { run = 'mpv --background-color=#00000000 --loop "$@"' },
+        # { run = 'mpv --loop "$@"' },
+        { run = 'mpv --loop --force-window "$@"' },
+        # { run = 'mpv --loop --terminal "$@"' },
+]
+
+archive = [
+        { run = 'ya pub archive-compress', display_name = "Compress" }
+]
+
+reveal = [
+        { run = '''exiftool "$1"; echo "Press enter to exit"; read''',      block = true, display_name = "Show exif" },
+        { run = '''mediainfo "$1" && echo "Press enter to exit" && read''', block = true, display_name = "Show media info" },
+]
+
+fallback = [
+        { run = 'xdg-open "$@"',    display_name = "Open" },
+        { run = 'xdg-open -R "$@"', display_name = "Reveal in Finder" },
+]
+
+
+[open]
+rules = [
+        { name = "*/",                          use = ["text",  "open", "reveal"] },
+        { mime = "text/*",                      use = ["text",  "open", "reveal"] },
+        { mime = "application/pdf",             use = ["pdff",  "reveal"] },
+        { mime = "image/*",                     use = ["image", "reveal"] },
+        { mime = "video/*",                     use = ["video", "reveal"] },
+        { mime = "audio/*",                     use = ["audio", "reveal"] },
+        { mime = "inode/empty",                 use = ["edit",  "reveal"] },
+        { mime = "application/json",            use = ["edit",  "reveal"] },
+        { mime = "*/javascript",                use = ["edit",  "reveal"] },
+
+        # This
+        { mime = "application/gzip",            use = ["extract", "reveal"] },
+        { mime = "application/zip",             use = ["extract", "reveal"] },
+        { mime = "application/x-tar",             use = ["extract", "reveal"] },
+        { mime = "application/x-gtar",            use = ["extract", "reveal"] },
+        { mime = "application/x-bzip",            use = ["extract", "reveal"] },
+        { mime = "application/x-bzip2",           use = ["extract", "reveal"] },
+        { mime = "application/x-7z-compressed",   use = ["extract", "reveal"] },
+        { mime = "application/x-rar",             use = ["extract", "reveal"] },
+        { mime = "application/x-xz",              use = ["extract", "reveal"] },
+        { mime = "application/zstd",            use = ["extract", "reveal"] },
+
+        #───────────────────────────────────────────────────────────────────────
+        # Fallback
+
+        # { mime = "*",                           use = "fallback" },
+        ]
+
+
+[tasks]
+        micro_workers    = 15
+        macro_workers    = 10
+        bizarre_retry    = 5
+        image_alloc      = 536870912
+        image_bound      = [0, 0]
+        suppress_preload = false
+
+
+[[plugin.prepend_fetchers]]
+        id   = "git"
+        name = "*"
+        run  = "git"
+
+
+[[plugin.prepend_fetchers]]
+        id   = "git"
+        name = "*/"
+        run  = "git"
+
+
+[plugin]
+prepend_previewers = [
+        { name = "*/",                          run = "folder", sync = true },
+        { name = "*.md",                        run = "glow" },
+        # { mime = "audio/*",                     run = "audio-previewer"},
+        { mime = "text/csv",                    run = "miller"},
+        { mime = "application/zip",             run = "lsar" },
+        { mime = "application/*zip",            run = "lsar" },
+        { mime = "application/gzip",            run = "lsar" },
+        { mime = "application/x-tar",           run = "lsar" },
+        { mime = "application/x-bzip",          run = "lsar" },
+        { mime = "application/x-bzip2",         run = "lsar" },
+        { mime = "application/x-rar",           run = "lsar" },
+        { mime = "application/x-xz",            run = "lsar" },
+        { mime = "application/{,g}zip",         run = "lsar" },
+        { mime = "application/x-7z-compressed", run = "lsar" },
+        { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", run = "lsar" },
+]
+
+prepend_preloaders = [
+        # { mime = "audio/*", run = "audio-previewer"},
+]
+
+append_previewers = [
+        { name = "*", run = "file-extra-metadata" },
+]
+
+append_spotters = [
+        { name = "*", run = "file-extra-metadata" },
+]
+
+previewers = [
+        { name = "*/",                          run = "folder", sync = true },
+        # Code
+        { mime = "text/*",                      run = "code" },
+        { mime = "*/xml",                       run = "code" },
+        { mime = "*/javascript",                run = "code" },
+        { mime = "*/x-wine-extension-ini",      run = "code" },
+        # JSON
+        { mime = "application/json",            run = "json" },
+        # Image
+        { mime = "image/vnd.djvu",              run = "noop" },
+        { mime = "image/*",                     run = "image" },
+        # Video
+        { mime = "video/*",                     run = "video" },
+        # PDF
+        { mime = "application/pdf",             run = "pdf" },
+        # Archive
+        { mime = "application/zip",             run = "lsar" },
+        { mime = "application/gzip",            run = "lsar" },
+        { mime = "application/x-tar",           run = "lsar" },
+        { mime = "application/x-bzip",          run = "lsar" },
+        { mime = "application/x-bzip2",         run = "lsar" },
+        { mime = "application/x-rar",           run = "lsar" },
+        { mime = "application/xz",              run = "lsar" },
+        { mime = "application/x-7z-compressed", run = "lsar" },
+        # Fallback
+        # { name = "*", run = "file" },
+]
