@@ -1,0 +1,15 @@
+{
+        "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+        "workspace.library": [
+                "$VIMRUNTIME/lua",
+                // "$XDG_DATA_HOME/nvim/lazy/dropbar.nvim",
+                // "$XDG_DATA_HOME/nvim/lazy/blink.nvim",
+                // "$XDG_DATA_HOME/nvim/lazy/tiny-code-action.nvim",
+                // "$XDG_DATA_HOME/nvim/lazy/nvim-ufo",
+                // "$XDG_DATA_HOME/nvim/lazy/nvim-treesitter",
+                // "$HOME/.local/share/nvim/lazy/",
+                "${3rd}/luv/library"
+        ],
+        "runtime.version": "LuaJIT",
+        "diagnostics.globals": ["Snacks"]
+}

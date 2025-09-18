@@ -1,0 +1,124 @@
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+    font:                        "Monocraft 10";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+/* Main Window */
+window {
+    location:                    north;
+    y-offset:                    3;
+    x-offset:                    90;
+    width:                       12em;
+    height:                      30em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border-color:                @main-br;
+    background-color:            @main-bg;
+}
+
+/* Main Container */
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0.5em;
+    orientation:                 vertical;
+    children:                    [ "wallbox" , "listbox" ];
+    background-color:            transparent;
+}
+
+/* Input Container */
+wallbox {
+    margin:                      0 0.5em;
+    padding:                     -1.2em;
+    spacing:                     0;
+    expand:                      false;
+    orientation:                 horizontal;
+    background-color:            @main-bg;
+    children:                    [ "inputbar" ];
+}
+
+/* Input Bar */
+inputbar {
+    enabled:                     true;
+    padding:                     0em;
+    children:                    [ "entry" ];
+    padding:                     -0.2em 0.3em;
+    background-color:            @main-bg;
+    expand:                      true;
+}
+entry {
+    enabled:                     true;
+    padding:                     1.8em;
+    text-color:                  @main-fg;
+    background-color:            @main-bg;
+}
+
+/* List Container */
+listbox {
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "dummy" , "listview" , "dummy" ];
+    background-color:            transparent;
+}
+listview {
+    enabled:                     true;
+    layout:                      vertical;
+    cycle:                       false;
+    dynamic:                     true;
+    fixed-height:                true;
+    fixed-columns:               false;
+    expand:                      false;
+    reverse:                     false;
+
+    columns:                     1;
+    lines:                       6;
+    cursor:                      "default";
+
+    padding:                     0.4em 0.5em;
+    spacing:                     0;
+
+    background-color:            transparent;
+    text-color:                  @main-fg;
+    scrollbar:                   false;
+}
+dummy {
+    enabled:                     true;
+
+    padding:                     0;
+    spacing:                     0;
+
+    background-color:            transparent;
+}
+
+/* List Elements */
+element {
+    enabled:                     true;
+
+    padding:                     0.4em;
+    cursor:                      pointer;
+
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+element selected.normal {
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
+}
+element-text {
+    enabled:                     true;
+
+    vertical-align:              0;
+    horizontal-align:            0;
+    cursor:                      inherit;
+
+    background-color:            transparent;
+    text-color:                  inherit;
+}

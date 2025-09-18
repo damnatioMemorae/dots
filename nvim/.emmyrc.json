@@ -1,0 +1,66 @@
+{
+        "$schema": "https://raw.githubusercontent.com/EmmyLuaLs/emmylua-analyzer-rust/refs/heads/main/crates/emmylua_code_analysis/resources/schema.json",
+        "diagnostics": {
+                "globals": ["Snacks"],
+                "severity": {
+                        "undefined-global": "warning",
+                        "unused-local": "information"
+                }
+        },
+        "runtime": {
+                "requirePattern": [
+                        "lua/?.lua",
+                        "lua/?/init.lua",
+                        "?/lua/?.lua",
+                        "?/lua/?/init.lua"
+                ],
+                "version": "LuaJIT"
+        },
+        "strict": {
+                "arrayIndex": false,
+                "docBaseConstMatchBaseType": false,
+                "metaOverrideFileDefine": false,
+                "requirePath": false,
+                "typeCall": false
+        },
+        "hint": {
+                "enable": true,
+                "enumParamHint": true,
+                "indexHint": true,
+                "localHint": true,
+                "metaCallHint": true,
+                "overrideHint": true,
+                "paramHint": true
+        },
+        "hover": {
+                "enable": true
+        },
+        "codeLens": {
+                "enable": true
+        },
+        "semanticTokens": {
+                "enable": false
+        },
+        "inlineValues": {
+                "enable": true
+        },
+        "documentColor": {
+                "enable": true
+        },
+        "workspace": {
+                "enableReindex": true,
+                "encoding": "utf-8",
+                "ignoreDir": [],
+                "ignoreGlobs": ["**/*_spec.lua"],
+                "library": [
+                        "$VIMRUNTIME",
+                        "$HOME/.local/share/nvim/lazy/",
+                        "$LLS_Addons/luvit",
+                        "${3rd}/luv/library"
+                ],
+                "moduleMap": [],
+                "preloadFileSize": 0,
+                "reindexDuration": 5000,
+                "workspaceRoots": []
+        }
+}

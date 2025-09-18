@@ -1,0 +1,263 @@
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+    font:                        "Monocraft 10";
+    	drun-display-format:        "{name}";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+
+// Main //
+window {
+    location:                    north;
+    y-offset:                    18;
+    x-offset:                    0;
+    width:                       23em;
+    height:                      30em;
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+    border-color:                @main-br;
+    background-color:            @main-bg;
+}
+mainbox {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     0.2em;
+    orientation:                 vertical;
+    children:                    [ "wallbox" , "listbox" ];
+    background-color:            transparent;
+}
+wallbox {
+    spacing:                     0em;
+    padding:                     0em;
+    expand:                      false;
+    orientation:                 horizontal;
+    background-color:            @main-bg;
+    children:                    [ "inputbar" ];
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    padding:                     1em;
+    children:                    [ prompt, textbox-prompt-colon, entry ];
+    background-color:            @main-bg;
+    expand:                      true;
+}
+
+prompt {
+    enabled:                     false;
+    spacing:                     0;
+    text-color:                  @main-bg;
+    background-color:            @main-fg;
+    margin:                      0;
+}
+
+textbox-prompt-colon {
+    expand:                      false;
+    str:                         "";
+    margin:                      0;
+    background-color:            @main-bg;
+}
+
+entry {
+    margin:                      3;
+    enabled:                     true;
+    padding:                     0em;
+    text-color:                  @main-fg;
+    background-color:            @main-bg;
+}
+
+
+// Lists //
+listbox {
+    spacing:                     0em;
+    padding:                     0em;
+    orientation:                 vertical;
+    children:                    [ "dummy" , "listview" , "dummy" ];
+    background-color:            transparent;
+}
+listview {
+    enabled:                     true;
+    padding:                     1em;
+    columns:                     1;
+    lines:                       6;
+    cycle:                       false;
+    fixed-height:                true;
+    fixed-columns:               false;
+    expand:                      false;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+dummy {
+    spacing:                     0em;
+    padding:                     0em;
+    background-color:            transparent;
+}
+
+
+// Elements //
+element {
+    enabled:                     true;
+    padding:                     0.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+element selected.normal {
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
+}
+element-text {
+    vertical-align:              0.0;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+/*/* config - Clipboard */
+
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+  	drun-display-format:         "{name}";
+    font:                        "Monocraft 14";
+}
+
+/* Config and colors ----------------------------------------------- */
+
+@import "theme.rasi"
+
+/* Main Window ------------------------------------------------ */
+window {
+    width:                       100%;
+    height:                      100%;
+    margin:                      0px;
+    padding:                     0px;
+    transparency:                "real";
+    background-color:            black / 42%;
+}
+
+/* ----- Main Box ----- */
+mainbox {
+    orientation:                 vertical;
+    children:                    [ "inputbar", "textbox-help", "message", "listview" ];
+    background-color:            transparent;
+
+    spacing:                      16px;
+    margin:                       0px;
+    padding:                      64px;
+}
+
+/* Inputbar --------------------------------------------------- */
+inputbar {
+    children:                    [ "dummy", "entry", "dummy" ];
+    border-radius:               24px;
+
+    spacing:                     0px;
+    padding:                     128px 64px;
+    orientation:                 horizontal;
+    background-image:            url("~/.config/hyde/themes/Catppuccin Mocha/wallpapers/002.jpg", width);
+}
+
+dummy {
+  background-color: transparent;
+}
+
+textbox-help {
+    expand: false;
+    content: " [CTRL DEL]  Delete \n [ALT DEL]   Wipe";
+
+    border-radius:                 12px;
+    background-color:              #313244;
+    text-color:                    #F5E0DC;
+
+    margin:                        0px;
+    padding:                       6px;
+}
+
+textbox-icon {
+    expand:                      true;
+    background-color:            transparent;
+    text-color:                  transparent;
+    margin: 0px 0px 0px 25px;
+    content: "  ";
+}
+
+/* Entry input ------------------------------------------------ */
+entry {
+    cursor:                      inherit;
+    placeholder:                 "Search";
+    placeholder-color:           #F5E0DC;
+
+    border-radius:               12px;
+    background-color:            black / 48%;
+    text-color:                  #F5E0DC;
+
+    padding:                     1px;
+    margin:                      0px;
+}
+
+/* Listview --------------------------------------------------- */
+listview {
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
+/* ---- Listview ---- */
+listview {
+    cursor:                      "default";
+    columns:                     2;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   true;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    background-color:            transparent;
+    text-color:                  transparent;
+
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+/* ---- Elements ---- */
+element {
+    cursor:                      pointer;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  transparent;
+
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  transparent;
+    size:                        36px;
+    cursor:                      inherit;
+}
+
+element-text {
+    horizontal-align:            0.0;
+}
+
+@media(max-aspect-ratio: 1.8) {
+    element {
+        orientation:             vertical;
+    }
+}*/

@@ -1,0 +1,198 @@
+(defcfg
+        allow-hardware-repeat     false
+        concurrent-tap-hold       yes
+        linux-unicode-termination space
+        log-layer-changes         no
+        process-unmapped-keys     yes
+        rapid-event-delay         0
+)
+
+(defsrc
+        esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12  ins  prnt del home end prev next
+        grv  1    2    3    4    5    6    7    8    9    0     -     =    bspc
+        tab  q    w    e    r    t    y    u    i    o    p     [     ]    \
+        caps a    s    d    f    g    h    j    k    l    ;     '     ret
+        lsft z    x    c    v    b    n    m    ,    .    /     rsft
+        lctl lmet lalt           spc            ralt rctl
+)
+
+(deflayer default
+        @esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12  @ins  prnt @del home end prev next
+        grv  1    2    3    4    5    6    7    8    9    0     -     =    bspc
+        tab  @q    w    @e    r    t    y    u    i    @o    @p     [     ]    \
+        @caps @a    @s    @d    @f    g    @h    @j    @k    @l    ;     '     ret
+        lsft z    x    c    v    b    @n    @m    ,    .    /     rsft
+        lctl lmet lalt           @spc            ralt rctl
+)
+
+(deflayer normal
+        esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10   f11   f12  ins  prnt del home end prev next
+        @grv  1    2    3    4    5    6    7    8    9    0     -     =    bspc
+        tab  q    w    e    r    t    y    u    i    o    p     [     ]    \
+        caps a    s    d    f    g    h    j    k    l    ;     '     ret
+        lsft z    x    c    v    b    n    m    ,    .    /     rsft
+        lctl lmet lalt           spc            ralt rctl
+)
+
+(defvar
+        tap-timeout  100
+        hold-timeout 200
+
+        tt $tap-timeout
+        ht $hold-timeout
+)
+
+(defalias
+        ins  (layer-switch normal)
+        grv  (layer-switch default)
+        del  lrld
+        esc  caps
+        caps (tap-hold-release $tt $ht esc lctl)
+        a    (tap-hold-release $tt $ht a lalt)
+        s    (tap-hold-release $tt $ht s lmet)
+        d    (tap-hold-release $tt $ht d lsft)
+        f    (tap-hold-release $tt $ht f lctl)
+
+        h    (tap-hold-release $tt $ht h rctl)
+        j    (tap-hold-release $tt $ht j rsft)
+        k    (tap-hold-release $tt $ht k rmet)
+        l    (tap-hold-release $tt $ht l ralt)
+
+        spc  (tap-hold-release $tt $ht spc (layer-while-held mouse))
+
+        n    (tap-hold-release $tt $ht n   (layer-while-held numbers))
+        m    (tap-hold-release $tt $ht m   (layer-while-held fuckeys))
+        p    (tap-hold-release $tt $ht p   (layer-while-held player))
+        e    (tap-hold-release $tt $ht e   (layer-while-held hjkl))
+        o    (tap-hold-release $tt $ht o   (layer-while-held symbols-left))
+        q    (tap-hold-release $tt $ht q   (layer-while-held symbols-right))
+)
+
+(deflayermap (numbers)
+        w 7
+        e 8
+        r 9
+        s 4
+        d 5
+        f 6
+        x 1
+        c 2
+        v 3
+        q 0
+        a +
+        z -
+        g bspc
+        o .
+        spc ret
+)
+
+(deflayermap (fuckeys)
+        q f1
+        w f2
+        e f3
+        r f4
+
+        a f5
+        s f6
+        d f7
+        f f8
+
+        z f9
+        x f10
+        c f11
+        v f12
+)
+
+(deflayermap (player)
+        a prev
+        s end
+        d home
+        f next
+)
+
+(deflayermap (hjkl)
+        g bspc
+        spc ret
+
+        h left
+        j down
+        k up
+        l right
+
+        a a
+        s s
+        d d
+        f f
+        u u
+
+        n h
+        m j
+        , k
+        . l
+)
+
+(deflayermap (symbols-left)
+        g bspc
+        spc ret
+
+        q S-'
+        w S-9
+        e S-0
+        r '
+
+        a [
+        s S-[
+        d S-]
+        f ]
+
+        z S-,
+        x S-.
+        c ,
+        v .
+)
+
+(deflayermap (symbols-right)
+        g bspc
+        spc ret
+
+        y S-1
+        u S-2
+        i S-3
+        o S-4
+        p /
+
+        h S-5
+        j S-6
+        k S-7
+        l S-8
+
+        n +
+        m -
+        , =
+        . S-min
+)
+
+(deflayermap (mouse)
+        n ret
+        c esc
+        y mlft
+        o mrgt
+        r mlft
+        q mrgt
+        g mmtp
+
+        w (mwheel-up    50 220)
+        e (mwheel-down  50 220)
+        u (mwheel-down  50 120)
+        i (mwheel-up    50 120)
+
+        h (movemouse-left  8 1)
+        j (movemouse-down  8 1)
+        k (movemouse-up    8 1)
+        l (movemouse-right 8 1)
+
+        a (movemouse-accel-left  5 300 1 7)
+        s (movemouse-accel-up    5 300 1 7)
+        d (movemouse-accel-down  5 300 1 7)
+        f (movemouse-accel-right 5 300 1 7)
+)

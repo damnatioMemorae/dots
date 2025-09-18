@@ -26,18 +26,18 @@
 !/gowall/
 !/hyde/
 !/hypr/
-# !/kanata/
-# !/kew/
-# !/kitty/
-# !/lazydocker/
-# !/lazygit/
-# !/nvim/
-# !/otter-launcher/
-# !/quickshell/
-# !/river/
-# !/rofi/
-# !/silicon/
-# !/spicetify/
+!/kanata/
+!/kew/
+!/kitty/
+!/lazydocker/
+!/lazygit/
+!/nvim/
+!/otter-launcher/
+!/quickshell/
+!/river/
+!/rofi/
+!/silicon/
+!/spicetify/
 # !/swappy/
 # !/sway/
 # !/systemd/
