@@ -1,0 +1,210 @@
+$HOME/.config/yazi/theme.toml
+
+[manager]
+cwd             = { fg = "green",           bg = "reset" }
+
+# Hovered
+hovered         = { fg = "#eba0ac",         bg = "#181825" }
+preview_hovered = { underline = false }
+
+# Find
+find_keyword    = { fg = "black",           bg = "green", italic = true, bold = true }
+find_position   = { fg = "green",           bg = "black", italic = true }
+
+# Tab
+tab_active      = { fg = "black",           bg = "green" }
+tab_inactive    = { fg = "green",           bg = "#1e1e2e" }
+tab_width       = 1
+
+# Marker
+marker_copied   = { fg = "green",           bg = "black" }
+marker_cut      = { fg = "green",           bg = "black" }
+marker_selected = { fg = "red",             bg = "black" }
+
+# Count
+count_copied    = { fg = "black",           bg = "green" }
+count_cut       = { fg = "black",           bg = "green" }
+count_selected  = { fg = "black",           bg = "red" }
+
+# Border
+border_symbol   = "│"
+border_style    = { fg = "#1e1e2e" }
+
+# Highlighting
+syntect_theme   = "~/.config/yazi/Catppuccin-mocha.tmTheme"
+
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#313244",         bg = "black" }
+
+# Mode
+mode_normal     = { fg = "black",           bg = "red",     bold = false }
+mode_select     = { fg = "black",           bg = "green",   bold = false }
+mode_unset      = { fg = "green",           bg = "#1e1e2e", bold = false }
+
+# Progress
+progress_label  = { fg = "black",           bold = true }
+progress_normal = { fg = "blue",            bg = "#1e1e2e" }
+progress_error  = { fg = "green",           bg = "#1e1e2e" }
+
+# Permissions
+permissions_t   = { fg = "#cdd6f4" }
+permissions_r   = { fg = "green" }
+permissions_w   = { fg = "green" }
+permissions_x   = { fg = "red" }
+permissions_s   = { fg = "#cdd6f4" }
+
+[input]
+border          = { fg = "green" }
+title           = {}
+value           = {}
+selected        = { reversed = true }
+
+[select]
+border          = { fg = "cyan" }
+active          = { fg = "cyan" }
+inactive        = {}
+
+[tasks]
+border          = { fg = "cyan" }
+title           = {}
+hovered         = { underline = false }
+
+[which]
+mask            = { bg = "#1e1e2e" }
+cand            = { fg = "green" }
+rest            = { fg = "#9399b2" }
+desc            = { fg = "green" }
+separator       = "  "
+separator_style = { fg = "#585b70" }
+
+[help]
+on              = { fg = "#f5c2e7" }
+exec            = { fg = "#94e2d5" }
+desc            = { fg = "#9399b2" }
+hovered         = { bg = "#585b70",         bold = true }
+footer          = { fg = "#45475a",         bg = "white" }
+
+[filetype]
+
+rules = [
+    # Images
+    { mime = "image/*",                     fg = "#94e2d5" },
+
+    # Videos
+    { mime = "video/*",                     fg = "#f9e2af" },
+    { mime = "audio/*",                     fg = "#f9e2af" },
+
+    # Archives
+    { mime = "application/zip",             fg = "#f5c2e7" },
+    { mime = "application/gzip",            fg = "#f5c2e7" },
+    { mime = "application/x-tar",           fg = "#f5c2e7" },
+    { mime = "application/x-bzip",          fg = "#f5c2e7" },
+    { mime = "application/x-bzip2",         fg = "#f5c2e7" },
+    { mime = "application/x-7z-compressed", fg = "#f5c2e7" },
+    { mime = "application/x-rar",           fg = "#f5c2e7" },
+
+    # Fallback
+    { name = "*",                           fg = "#6c7086" },
+    { name = "*/",                          fg = "red" },
+]
+
+[icons]
+
+"Desktop/"       = ""
+"Documents/"     = ""
+"Downloads/"     = ""
+"Pictures/"      = ""
+"Music/"         = ""
+"Movies/"        = ""
+"Videos/"        = ""
+"Public/"        = ""
+"Library/"       = ""
+"Development/"   = ""
+".config/"       = ""
+
+# Git
+".git/"          = ""
+".gitignore"     = ""
+".gitmodules"    = ""
+".gitattributes" = ""
+
+# Dotfiles
+".DS_Store"      = ""
+".bashrc"        = ""
+".bashprofile"   = ""
+".zshrc"         = ""
+".zshenv"        = ""
+".zprofile"      = ""
+".vimrc"         = ""
+
+# Text
+"*.txt"          = ""
+"*.md"           = ""
+
+# Archives
+"*.zip"          = ""
+"*.tar"          = ""
+"*.gz"           = ""
+"*.7z"           = ""
+
+# Audio
+"*.mp3"          = ""
+"*.flac"         = ""
+"*.wav"          = ""
+
+# Movies
+"*.mp4"          = ""
+"*.mkv"          = ""
+"*.avi"          = ""
+"*.mov"          = ""
+
+# Images
+"*.jpg"          = ""
+"*.jpeg"         = ""
+"*.png"          = ""
+"*.gif"          = ""
+"*.webp"         = ""
+"*.avif"         = ""
+"*.bmp"          = ""
+"*.ico"          = ""
+"*.svg"          = ""
+
+# Programming
+"*.c"            = ""
+"*.cpp"          = ""
+"*.h"            = ""
+"*.hpp"          = ""
+"*.rs"           = ""
+"*.go"           = ""
+"*.py"           = ""
+"*.js"           = ""
+"*.ts"           = ""
+"*.tsx"          = ""
+"*.jsx"          = ""
+"*.rb"           = ""
+"*.php"          = ""
+"*.java"         = ""
+"*.sh"           = ""
+"*.fish"         = ""
+"*.swift"        = ""
+"*.vim"          = ""
+"*.lua"          = ""
+"*.html"         = ""
+"*.css"          = ""
+"*.scss"         = ""
+"*.json"         = ""
+"*.toml"         = ""
+"*.yml"          = ""
+"*.yaml"         = ""
+"*.ini"          = ""
+"*.conf"         = ""
+"*.v"            = "󰍛"
+"*.sv"           = "󰍛"
+"*.svh"          = "󰍛"
+"*.tcl"          = "󰛓"
+
+# Default
+"*"              = ""
+"*/"             = ""

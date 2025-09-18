@@ -1,0 +1,101 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "arch",
+    "type": "small",
+    "color": { "1": "white", "2": "white" },
+    "padding": {
+      "top": 2,
+      "left": 0,
+    },
+  },
+
+  "display": {
+    "separator": " ",
+  },
+
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "key": "  System Information",
+      "keyColor": "red",
+    },
+    {
+      "type": "custom",
+      "key": "═══════════════════════",
+      "keyColor": "red",
+    },
+    {
+      "type": "custom",
+      "key": " 󰌢 OS",
+      "keyColor": "magenta",
+    },
+    {
+      "type": "os",
+      "key": " ├─  Distro {#32}",
+      "keyColor": "magenta",
+    },
+    {
+      "type": "kernel",
+      "key": " ├─  Kernel {#32}",
+      "keyColor": "magenta",
+    },
+    {
+      "type": "custom",
+      "key": "  Desktop Environment",
+      "keyColor": "blue",
+    },
+    {
+      "type": "wm",
+      "format": "{1}",
+      "key": " ├─ 󱂬 WM {#32}",
+      "keyColor": "blue",
+    },
+    {
+      "type": "theme",
+      "format": "{2}",
+      "key": " ├─  Theme {#32}",
+      "keyColor": "blue",
+    },
+    {
+      "type": "custom",
+      "key": "  Terminal",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "shell",
+      "key": " ├─  Shell {#32}",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "terminal",
+      "format": "{1}",
+      "key": " ├─  Term {#32}",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "custom",
+      "key": "  Hardware",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "cpu",
+      "key": " ├─  CPU {#32}",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "gpu",
+      "format": "{2}",
+      "key": " ├─ 󰢮 GPU {#32}",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "gpu",
+      "format": "{3}",
+      "key": " └─ 󰢮 GPU {#32}",
+      "keyColor": "cyan",
+    },
+    "break",
+  ],
+}

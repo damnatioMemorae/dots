@@ -1,0 +1,37 @@
+$HOME/.config/kitty/theme.conf|killall -SIGUSR1 kitty
+# The basic colors
+foreground              #ebdbb2
+background              #282828
+selection_foreground    #665c54
+selection_background    #ebdbb2
+url_color               #d65c0d
+
+# Cursor colors
+cursor                  #ebdbb2
+cursor_text_color       #282828
+
+#0 black
+#1 red
+#2 green
+#3 yellow
+#4 blue
+#5 magenta
+#6 cyan
+#7 white
+
+color0   #282828
+color1   #ebdbb2
+color2   #98971a
+color3   #d79921
+color4   #458588
+color5   #b16286
+color6   #689d6a
+color7   #a89984
+color8   #928374
+color9   #ebdbb2
+color10  #b8bb26
+color11  #fabd2f
+color12  #83a598
+color13  #d3869b
+color14  #8ec07c
+color15  #ebdbb2

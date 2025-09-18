@@ -1,0 +1,66 @@
+font-family                = Monocraft
+font-family-bold           = Monocraft
+font-family-italic         = Monocraft
+font-family-bold-italic    = Monocraft
+
+font-size                  = 10
+
+font-feature               = -calt
+font-feature               = -liga
+font-feature               = -dlig
+
+font-synthetic-style       = no-bold
+font-synthetic-style       = no-italic
+font-synthetic-style       = no-bold-italic
+
+bold-is-bright             = true
+
+adjust-cell-width          = 6%
+adjust-cell-height         = 18%
+adjust-underline-position  = 2
+adjust-underline-thickness = 10%
+
+shell-integration          = none
+shell-integration-features = no-cursor
+
+confirm-close-surface      = false
+resize-overlay             = never
+
+cursor-style               = block
+# cursor-opacity             = 0.3
+cursor-invert-fg-bg        = true
+adjust-cursor-height       = 3
+
+window-decoration          = false
+window-padding-x           = 9
+window-padding-y           = 9
+window-padding-balance     = true
+
+theme                      = theme
+
+# gtk-adwaita                = false
+gtk-single-instance        = true
+
+keybind = ctrl+,=unbind
+keybind = ctrl+shift+a=unbind
+keybind = ctrl+shift+i=unbind
+keybind = ctrl+shift+n=unbind
+keybind = ctrl+shift+o=unbind
+keybind = ctrl+shift+q=unbind
+keybind = ctrl+shift+t=unbind
+keybind = ctrl+shift+w=unbind
+keybind = ctrl+shift+c=unbind
+keybind = ctrl+shift+e=unbind
+keybind = unconsumed:ctrl+shift+alt+c=copy_to_clipboard
+
+# background-opacity         = 0.8
+custom-shader-animation    = true
+# custom-shader              = ~/.config/ghostty/shaders/crt-chromatic.glsl
+custom-shader              = ~/.config/ghostty/shaders/rgbsplit.glsl
+custom-shader              = ~/.config/ghostty/shaders/cursor/cursor_smear.glsl
+# custom-shader              = ~/.config/ghostty/shaders/glitchy.glsl
+# custom-shader              = ~/.config/ghostty/shaders/dither.glsl
+# custom-shader              = ~/.config/ghostty/shaders/bloom.glsl
+# custom-shader              = ~/.config/ghostty/shaders/bettercrt.glsl
+# custom-shader              = ~/.config/ghostty/shaders/crt.glsl
+# custom-shader              = ~/.config/ghostty/shaders/crt-chromatic_1.glsl

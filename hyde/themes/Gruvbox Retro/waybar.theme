@@ -1,0 +1,88 @@
+$HOME/.config/waybar/theme.css|killall waybar && waybar
+/* 
+bg - background
+fg - foreground
+br - border
+*/
+
+/* Main Colors */
+@define-color main-bg               #1d2021;
+@define-color main-fg               #fbf1c7;
+@define-color main-br               #fbf1c7;
+
+@define-color active-fg             #9399b2;
+@define-color active-bg             #32302f;
+
+@define-color hover-bg              #45475a;
+@define-color hover-fg              #1d2021;
+
+/* Module Colors */
+@define-color module-fg             #fbf1c7;
+/* @define-color module-bg             #32302f; */
+@define-color module-bg             #32302f;
+@define-color workspaces            #1d2021;
+
+@define-color media                 #32302f;
+@define-color window                #32302f;
+@define-color cpuinfo               #32302f;
+@define-color memory                #32302f;
+@define-color clock                 #32302f;
+@define-color cpu                   #32302f;
+@define-color time                  #32302f;
+@define-color date                  #32302f;
+@define-color wifi                  #32302f;
+@define-color blank-fg              #1d2021;
+@define-color blank-bg              #584945;
+
+@define-color wlg-fg                #fbf1c7;
+@define-color wlg-act               #32302f;
+@define-color wlg-hvr               #32302f;
+@define-color wlg-bg                #282828;
+
+@define-color pulseaudio            #32302f;
+@define-color backlight             #32302f;
+@define-color battery               #32302f;
+@define-color power                 #32302f;
+
+/* State Colors */
+@define-color good                  #fbf1c7;
+@define-color warning               #fe8019;
+@define-color critical              #fb4934;
+@define-color full                  #8ec07c;
+@define-color charging              #fbf1c7;
+
+@define-color min                   #32302f;
+@define-color midl                  #584945;
+@define-color mid                   #7c6f64;
+@define-color midh                  #a89984;
+@define-color max                   #fbf1c7;
+
+@define-color orange1               #fe8019;
+@define-color orange0               #d65d0e;
+@define-color aqua1                 #8ec07c;
+@define-color aqua0                 #689d6a;
+@define-color purple1               #d3869b;
+@define-color purple0               #b16286;
+@define-color blue1                 #83a598;
+@define-color blue0                 #458588;
+@define-color yellow1               #fabd2f;
+@define-color yellow0               #d79921;
+@define-color green1                #b8bb26;
+@define-color green0                #98971a;
+@define-color red1                  #fb4934;
+@define-color red0                  #cc241d;
+@define-color fg4                   #a89984;
+@define-color fg3                   #bdae93;
+@define-color fg2                   #d5c4a1;
+@define-color fg1                   #ebdbb2;
+@define-color fg0                   #fbf1c7;
+@define-color fg                    #ebdbb2;
+@define-color gray1                 #a89984;
+@define-color gray0                 #928374;
+@define-color bg4                   #7c6f64;
+@define-color bg3                   #665c54;
+@define-color bg2                   #584945;
+@define-color bg1                   #3c3836;
+@define-color bg_s                  #32302f;
+@define-color bg                    #282828;
+@define-color bg_h                  #1d2021;

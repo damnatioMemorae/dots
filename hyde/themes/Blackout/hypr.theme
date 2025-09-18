@@ -1,0 +1,108 @@
+$HOME/.config/hypr/themes/theme.conf
+$cursor-theme = catppuccin-mocha-light
+$cursor-size = 20
+exec = gsettings set org.gnome.desktop.interface icon-theme   "Tela-circle-dracula"
+exec = gsettings set org.gnome.desktop.interface gtk-theme    "Catppuccin-Mocha"
+exec = gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+env  = XCURSOR_SIZE,$cursor-size
+env  = XCURSOR_THEME,$cursor-theme
+exec = hyprctl setcursor $cursor-theme $cursor-size
+exec = gsettings set org.gnome.desktop.interface cursor-theme $cursor-theme
+exec = gsettings set org.gnome.desktop.interface cursor-size  $cursor-size
+
+exec = gsettings set org.gnome.desktop.interface font-name           "Monocraft 10"
+exec = gsettings set org.gnome.desktop.interface document-font-name  "Monocraft 10"
+exec = gsettings set org.gnome.desktop.interface monospace-font-name "Monocraft 10"
+exec = gsettings set org.gnome.desktop.interface font-antialiasing   "rgba"
+exec = gsettings set org.gnome.desktop.interface font-hinting        "full"
+
+# exec = hyprctl setcursor catppuccin-mocha-light 20
+# exec = gsettings set org.gnome.desktop.interface cursor-theme "catppuccin-mocha-light"
+# exec = gsettings set org.gnome.desktop.interface cursor-size 20
+
+general {
+        border_size                           = 0
+        col.active_border                     = rgb(a6adc8)
+        col.inactive_border                   = rgb(a6adc8)
+        gaps_in                               = 0
+        gaps_out                              = 0
+        snap {
+                enabled = false
+        }
+}
+
+group {
+        col.border_active                     = rgb(cdd6f4)
+        col.border_inactive                   = rgb(cdd6f4)
+        col.border_locked_active              = rgb(cdd6f4)
+        col.border_locked_inactive            = rgb(cdd6f4)
+        groupbar {
+                font_family                   = Monocraft
+                font_size                     = 12
+                height                        = 20
+                text_color                    = rgb(cdd6f4)
+                col.active                    = rgba(000000ff)
+                col.inactive                  = rgba(585b70ff)
+                col.locked_active             = rgba(000000ff)
+                col.locked_inactive           = rgba(585b70ff)
+        }
+}
+
+decoration {
+        # screen_shader                       = ~/.config/hypr/shaders/chromatic.frag
+        rounding                              = 0
+        active_opacity                        = 1
+        inactive_opacity                      = 1
+        fullscreen_opacity                    = 1
+        dim_inactive                          = true
+        dim_strength                          = 0.9
+        shadow {
+                enabled                       = false
+        }
+        blur {
+                enabled                       = true
+                passes                        = 2
+                size                          = 2
+                new_optimizations             = true
+                xray                          = false
+                noise                         = 0.0
+                contrast                      = 1.0
+                brightness                    = 1
+                vibrancy                      = 0
+                vibrancy_darkness             = 0
+                popups                        = true
+        }
+}
+
+plugin {
+        hy3 {
+                no_gaps_when_only             = 0
+                node_collapse_policy          = 0
+                tabs {
+                        height                = 24
+                        padding               = 0
+                        radius                = 0
+                        text_center           = false
+                        text_font             = Monocraft
+                        text_height           = 10
+                        text_padding          = 8
+                        col.active            = rgb(000000)
+                        col.active.text       = rgb(cdd6f4)
+                        col.active.border     = rgb(000000)
+                        col.focused           = rgb(000000)
+                        col.focused.text      = rgb(cdd6f4)
+                        col.focused.border    = rgb(000000)
+                        col.inactive          = rgb(000000)
+                        col.inactive.text     = rgb(45475a)
+                        col.inactive.border   = rgb(000000)
+                        col.urgent            = rgb(f38ba8)
+                        col.urgent.text       = rgb(000000)
+                        col.urgent.border     = rgb(f38ba8)
+                }
+                autotile {
+                        enable                = false
+                        trigger_width         = 800
+                        trigger_height        = 300
+                }
+        }
+}

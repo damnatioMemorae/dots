@@ -1,0 +1,11 @@
+Completion:
+  ArgumentLists: FullPlaceholders
+
+InlayHints:
+  BlockEnd: true
+  Designators: true
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+  DefaultArguments: true
+  TypeNameLimit: 20

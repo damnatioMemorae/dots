@@ -1,0 +1,66 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+dimensions = { columns = 0, lines = 0}
+position = { x = 0, y = 0 }
+padding = { x = 16, y = 14 }
+dynamic_padding = true
+
+[font]
+normal      = { family = "Monocraft", style = "Regular" }
+bold        = { family = "Monocraft", style = "Regular" }
+italic      = { family = "Monocraft", style = "Regular" }
+bold_italic = { family = "Monocraft", style = "Regular" }
+size = 13.0
+offset = { x = 0, y = 0 }
+glyph_offset = { x = 1, y = 1 }
+builtin_box_drawing = true
+
+[colors.primary]
+
+foreground = "#cdd6f4"
+background = "#11111b"
+
+ [colors.normal]
+
+ black   = "#11111b"
+ red     = "#cdd6f4"
+ green   = "#a6adc8"
+ yellow  = "#a6adc8"
+ blue    = "#a6adc8"
+ magenta = "#a6adc8"
+ cyan    = "#cdd6f4"
+ white   = "#a6adc8"
+
+ [colors.bright]
+
+ black   = "#1e1e2e"
+ red     = "#313244"
+ green   = "#cdd6f4"
+ yellow  = "#cdd6f4"
+ blue    = "#cdd6f4"
+ magenta = "#cdd6f4"
+ cyan    = "#cdd6f4"
+ white   = "#cdd6f4"
+
+ [colors.dim]
+
+ black   = "#1e1e2e"
+ red     = "#313244"
+ green   = "#cdd6f4"
+ yellow  = "#cdd6f4"
+ blue    = "#cdd6f4"
+ magenta = "#cdd6f4"
+ cyan    = "#cdd6f4"
+ white   = "#cdd6f4"
+
+[cursor]
+
+style = { shape = "block", blinking = "Always" }
+blink_interval = 600
+blink_timeout = 0
+
+[keyboard]
+
+bindings = [{ key = "0", mods = "Control", action = "ResetFontSize"}]

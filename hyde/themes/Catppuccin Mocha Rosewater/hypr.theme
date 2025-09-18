@@ -1,0 +1,61 @@
+$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
+$cursor-theme = Catppuccin-Mocha-Rosewater
+$cursor-size = 14
+exec = gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-dracula'
+exec = gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-Mocha'
+exec = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+env = XCURSOR_SIZE,$cursor-size
+env = XCURSOR_THEME,$cursor-theme
+exec = hyprctl setcursor $cursor-theme $cursor-size
+exec = gsettings set org.gnome.desktop.interface cursor-theme $cursor-theme
+exec = gsettings set org.gnome.desktop.interface cursor-size $cursor-size
+
+general {
+    allow_tearing                     = true
+    layout                            = master
+    border_size                       = 0
+    gaps_in                           = 4
+    gaps_out                          = 40
+    col.active_border                 = rgb(f5e0dc)
+    col.inactive_border               = rgb(f5e0dc)
+}
+
+windowrulev2 = bordersize 1, floating:1
+
+group {
+    col.border_active                 = rgb(f5e0dc)
+    col.border_inactive               = rgb(f5e0dc)
+    col.border_locked_active          = rgb(f5e0dc)
+    col.border_locked_inactive        = rgb(f5e0dc)
+    groupbar {
+        font_family                   = Monocraft
+        font_size                     = 12
+        height                        = 20
+        text_color                    = rgb(313244)
+        col.active                    = rgb(f5e0dc)
+        col.inactive                  = rgb(11111b)
+        col.locked_active             = rgb(f5e0dc)
+        col.locked_inactive           = rgb(11111b)
+    }
+}
+
+decoration {
+    rounding                          = 0
+    active_opacity                    = 1
+    inactive_opacity                  = 1
+    fullscreen_opacity                = 1
+    drop_shadow                       = false
+    blur {
+        enabled                       = true
+        passes                        = 1
+        size                          = 6
+        new_optimizations             = true
+        xray                          = false
+        noise                         = 0.0
+        contrast                      = 1.0
+        brightness                    = 1
+        vibrancy                      = 0
+        vibrancy_darkness             = 0
+        popups                        = true
+    }
+}

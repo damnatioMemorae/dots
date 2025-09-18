@@ -1,0 +1,57 @@
+$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
+
+
+
+exec = gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox-Plus-Dark'
+exec = gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Retro'
+exec = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
+exec = gsettings set org.gnome.desktop.interface cursor-theme 'Gruvbox-Retro'
+exec = gsettings set org.gnome.desktop.interface cursor-size 20
+exec = hyprctl setcursor Gruvbox-Retro 20
+
+general {
+    border_size                       = 1
+    col.active_border                 = rgb(ebdbb2)
+    col.inactive_border               = rgb(665c54)
+}
+
+group {
+    col.border_active                 = rgb(ebdbb2)
+    col.border_inactive               = rgb(665c54)
+    col.border_locked_active          = rgb(ebdbb2)
+    col.border_locked_inactive        = rgb(665c54)
+    groupbar {
+        font_family                   = Monocraft
+        font_size                     = 12
+        height                        = 20
+        text_color                    = rgb(282828)
+        col.active                    = rgb(ebdbb2)
+        col.inactive                  = rgb(665c54)
+        col.locked_active             = rgb(ebdbb2)
+        col.locked_inactive           = rgb(665c54)
+    }
+}
+
+decoration {
+    rounding                          = 0
+    active_opacity                    = 1
+    inactive_opacity                  = 1
+    fullscreen_opacity                = 1
+    shadow {
+      enabled =                         false
+    }
+    blur {
+        enabled                       = false
+        passes                        = 1
+        size                          = 6
+        new_optimizations             = true
+        xray                          = false
+        noise                         = 0.0
+        contrast                      = 1.0
+        brightness                    = 1
+        vibrancy                      = 0
+        vibrancy_darkness             = 0
+        popups                        = false
+    }
+}

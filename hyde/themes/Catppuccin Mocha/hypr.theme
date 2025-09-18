@@ -1,0 +1,64 @@
+$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
+$cursor-theme = Catppuccin-Mocha-Light
+$cursor-size = 14
+exec = gsettings set org.gnome.desktop.interface icon-theme 'Tela-circle-dracula'
+exec = gsettings set org.gnome.desktop.interface gtk-theme 'Catppuccin-Mocha'
+exec = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+env = XCURSOR_SIZE,$cursor-size
+env = XCURSOR_THEME,$cursor-theme
+exec = hyprctl setcursor $cursor-theme $cursor-size
+exec = gsettings set org.gnome.desktop.interface cursor-theme $cursor-theme
+exec = gsettings set org.gnome.desktop.interface cursor-size $cursor-size
+
+general {
+    allow_tearing                     = true
+    layout                            = master
+    border_size                       = 0
+    gaps_in                           = 8
+    gaps_out                          = 40
+    col.active_border                 = rgb(a6adc8)
+    col.inactive_border               = rgb(a6adc8)
+}
+
+windowrulev2 = bordersize 0, floating:1
+windowrulev2 = opacity 1.0 1.0, floating:1
+
+group {
+    col.border_active                 = rgb(a6adc8)
+    col.border_inactive               = rgb(a6adc8)
+    col.border_locked_active          = rgb(a6adc8)
+    col.border_locked_inactive        = rgb(a6adc8)
+    groupbar {
+        font_family                   = Monocraft
+        font_size                     = 12
+        height                        = 20
+        text_color                    = rgb(585b70)
+        col.active                    = rgba(a6adc8b3)
+        col.inactive                  = rgba(11111bb3)
+        col.locked_active             = rgba(a6adc8b3)
+        col.locked_inactive           = rgba(11111bb3)
+    }
+}
+
+decoration {
+    rounding                          = 10
+    active_opacity                    = 1
+    inactive_opacity                  = 1
+    fullscreen_opacity                = 1
+    drop_shadow                       = false
+    blur {
+        enabled                       = false
+        passes                        = 1
+        size                          = 6
+        new_optimizations             = true
+        xray                          = false
+        noise                         = 0.0
+        contrast                      = 1.0
+        brightness                    = 1
+        vibrancy                      = 0
+        vibrancy_darkness             = 0
+        popups                        = true
+    }
+}
+
+layerrule = blur,waybar

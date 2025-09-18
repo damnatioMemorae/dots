@@ -1,0 +1,79 @@
+[flags]
+        enable_cache_memory     = true
+        process_memory_as_value = true
+
+[processes]
+        columns                 = ["Name", "Mem", "CPU%", "User"]
+
+[styles]
+        theme                   = "nord"
+
+[styles.cpu]
+        all_entry_color         = "red"
+        avg_entry_color         = "red"
+        cpu_core_colors         = ["red", "red", "red", "red", "red", "red", "red", "red", "red", "red"]
+
+[styles.memory]
+        ram_color               = "light magenta"
+        cache_color             = "light red"
+        swap_color              = "light yellow"
+        arc_color               = "light cyan"
+        gpu_colors              = ["light blue", "light red", "cyan", "green", "blue", "red"]
+
+[styles.network]
+        rx_color                = "light magenta"
+        tx_color                = "light yellow"
+        rx_total_color          = "light cyan"
+        tx_total_color          = "light green"
+
+[styles.battery]
+        high_battery_color      = "green"
+        medium_battery_color    = "yellow"
+        low_battery_color       = "red"
+
+[styles.tables]
+        headers                 = { color = "green", bold = true }
+
+[styles.graphs]
+        graph_color             = "red"
+        legend_text             = { color = "red" }
+
+[styles.widgets]
+        border_color            = "red"
+        selected_border_color   = "magenta"
+        widget_title            = { color = "yellow" }
+        text                    = { color = "red" }
+        selected_text           = { color = "red", bg_color = "black", bold = true }
+        disabled_text           = { color = "dark gray" }
+
+[[row]]
+        ratio                   = 3
+
+[[row.child]]
+        ratio                   = 11
+        type                    = "proc"
+
+[[row.child]]
+        ratio                   = 8
+        type                    = "mem"
+
+[[row]]
+        ratio                   = 1
+
+[[row.child]]
+        ratio                   = 2
+        type                    = "disk"
+
+[disk_filter]
+        is_list_ignored         = true
+        list                    = ["/dev/sda"]
+        regex                   = true
+        case_sensitive          = false
+        whole_word              = false
+
+[mount_filter]
+        is_list_ignored         = true
+        list                    = ["/mnt/.*", "/boot"]
+        regex                   = true
+        case_sensitive          = false
+        whole_word              = false

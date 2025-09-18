@@ -1,0 +1,50 @@
+/*
+!/.bash_profile
+!/.bashrc
+!/.clang-format
+!/.editorconfig
+!/.gitconfig
+!/.gitignore
+!/.p10k.zsh
+!/.prettierrc.json
+!/.zshrc
+!/.bash_profile
+!/.bashrc
+
+!/alacritty/
+!/bat/
+!/bottom/
+!/cava/
+!/clangd/
+!/cmus/
+!/delta/
+!/dunst/
+# !/emmylua_ls/
+!/fastfetch/
+!/fontconfig/
+!/ghostty/
+!/gowall/
+!/hyde/
+!/hypr/
+# !/kanata/
+# !/kew/
+# !/kitty/
+# !/lazydocker/
+# !/lazygit/
+# !/nvim/
+# !/otter-launcher/
+# !/quickshell/
+# !/river/
+# !/rofi/
+# !/silicon/
+# !/spicetify/
+# !/swappy/
+# !/sway/
+# !/systemd/
+# !/tg/
+# !/tmux/
+# !/waybar/
+# !/wireplumber/
+# !/yazi/
+# !/yt-dlg/
+# !/zathura/
