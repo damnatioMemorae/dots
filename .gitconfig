@@ -8,4 +8,4 @@
 	email = exakey@gmail.com
 	name = damnatioMemorae
 [http]
-	postBuffer = 5242880000000
+	postBuffer = 157286400
