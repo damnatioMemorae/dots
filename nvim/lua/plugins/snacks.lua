@@ -103,7 +103,7 @@ return {
 
                 -- LSP PICKERS
                 { -- REFERENCES
-                        "gr",
+                        ",r",
                         function()
                                 Snacks.picker.lsp_references({
                                         on_show = function() vim.cmd.stopinsert() end,
@@ -113,7 +113,7 @@ return {
                         mode = { "n" },
                 },
                 { -- IMPLEMENTATIONS
-                        "gi",
+                        ",i",
                         function()
                                 Snacks.picker.lsp_implementations({
                                         on_show = function() vim.cmd.stopinsert() end,
@@ -123,7 +123,7 @@ return {
                         mode = { "n" },
                 },
                 { -- DEFINITIONS
-                        "gd",
+                        ",d",
                         function()
                                 Snacks.picker.lsp_definitions({
                                         on_show = function() vim.cmd.stopinsert() end,
@@ -133,7 +133,7 @@ return {
                         mode = { "n" },
                 },
                 { -- DECLARATIONS
-                        "gD",
+                        ",D",
                         function()
                                 Snacks.picker.lsp_declarations({
                                         on_show = function() vim.cmd.stopinsert() end,
@@ -143,7 +143,7 @@ return {
                         mode = { "n" },
                 },
                 { -- SYMBOLS
-                        "gs",
+                        ",s",
                         function()
                                 Snacks.picker.lsp_symbols({
                                         on_show = function() vim.cmd.stopinsert() end,
@@ -153,7 +153,7 @@ return {
                         mode = { "n" },
                 },
                 { -- WORKSPACE SYMBOLS
-                        "gS",
+                        ",S",
                         function()
                                 Snacks.picker.lsp_workspace_symbols({
                                         on_show = function() vim.cmd.stopinsert() end,

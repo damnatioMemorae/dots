@@ -68,7 +68,7 @@ local customCol = function(C)
                 -- CursorColumn                  = { bg = colors.},
                 -- Cursor                           = { fg = colors.crust, bg = colors.red },
                 CursorLine                       = { bg = C.none },
-                CursorLineNr                     = { fg = C.flamingo },
+                CursorLineNr                     = { fg = C.subtext0 },
                 Define                           = { fg = C.pink },
                 Directory                        = { fg = ivory },
                 -- EndOfBuffer                   = { fg = colors.},
