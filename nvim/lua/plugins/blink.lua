@@ -25,13 +25,13 @@ return {
                 completion = {
                         keyword       = { range = "prefix" },
                         trigger       = {
-                                prefetch_on_insert                   = true,
-                                show_on_backspace                    = true,
-                                show_on_backspace_in_keyword         = true,
-                                show_on_backspace_after_accept       = true,
-                                show_on_backspace_after_insert_enter = true,
-                                show_on_insert                       = true,
-                                show_on_accept_on_trigger_characters = true,
+                                prefetch_on_insert                   = false,
+                                show_on_backspace                    = false,
+                                show_on_backspace_in_keyword         = false,
+                                show_on_backspace_after_accept       = false,
+                                show_on_backspace_after_insert_enter = false,
+                                show_on_insert                       = false,
+                                show_on_accept_on_trigger_characters = false,
                                 show_on_blocked_trigger_characters   = {},
                         },
                         list          = {
@@ -46,7 +46,7 @@ return {
                                 scrolloff          = 4,
                                 scrollbar          = true,
                                 direction_priority = { "s", "n" },
-                                auto_show          = true,
+                                auto_show          = false,
                                 draw               = {
                                         align_to   = "label",
                                         padding    = 1,
@@ -88,7 +88,10 @@ return {
                         implementation    = "prefer_rust",
                         -- implementation = "lua",
                         max_typos         = 0,
-                        use_frecency      = true,
+                        frecency          = {
+                                enabled = true,
+                                path    = vim.fn.stdpath("state") .. "/blink/cmp/frecency.dat",
+                        },
                         use_proximity     = true,
                         sorts             = {
                                 function(a, b)
