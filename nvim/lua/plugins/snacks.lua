@@ -1,5 +1,5 @@
 local button = "Error"
-local label  = "Normal"
+local label  = "NonText"
 
 return {
         "folke/snacks.nvim",
