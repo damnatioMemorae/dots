@@ -46,7 +46,7 @@ require("telegram-send"):setup({
 
 require("toggle-pane"):entry("min-parent")
 
-require("/home/q/dev/Lua/Yazi/double-pane"):setup({
-        -- require("double-pane"):setup({
-        enabled = false
-})
+--require("/home/q/dev/Lua/Yazi/double-pane"):setup({
+--        -- require("double-pane"):setup({
+--        enabled = false
+--})

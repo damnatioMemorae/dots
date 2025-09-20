@@ -124,7 +124,6 @@ alias       clock='clear && tty-clock -c && clear'
 alias         umx='clear && unimatrix --color=red -a -f -n -s 97 -l o && clear'
 alias         cmx='clear && cmatrix && clear'
 alias     arttime='arttime --nolearn -a skull3 --hours 24 -t "Nothing ever lasts forever"'
-alias        sudo='doas'
 
 alias           2='hyprctl dispatch exit'
 alias           1='reboot'
