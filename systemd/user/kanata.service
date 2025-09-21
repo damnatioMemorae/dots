@@ -5,8 +5,8 @@ Documentation=https://github.com/jtroo/kanata
 [Service]
 Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
 Type=simple
-ExecStart=sudo sh -c "exec $(which kanata) --cfg $HOME/.config/kanata/config.kbd"
-Restart=always
+ExecStart=/usr/bin/sh -c 'exec $(which kanata) --cfg ${HOME}/.config/kanata/config.kbd'
+Restart=no
 
 [Install]
 WantedBy=default.target
