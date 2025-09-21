@@ -25,7 +25,7 @@ return {
                 completion = {
                         keyword       = { range = "prefix" },
                         trigger       = {
-                                prefetch_on_insert                   = false,
+                                prefetch_on_insert                   = true,
                                 show_on_backspace                    = false,
                                 show_on_backspace_in_keyword         = false,
                                 show_on_backspace_after_accept       = false,
@@ -46,7 +46,7 @@ return {
                                 scrolloff          = 4,
                                 scrollbar          = true,
                                 direction_priority = { "s", "n" },
-                                auto_show          = false,
+                                auto_show          = true,
                                 draw               = {
                                         align_to   = "label",
                                         padding    = 1,

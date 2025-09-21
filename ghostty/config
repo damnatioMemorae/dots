@@ -56,7 +56,7 @@ keybind = unconsumed:ctrl+shift+alt+c=copy_to_clipboard
 # background-opacity         = 0.8
 custom-shader-animation    = true
 # custom-shader              = ~/.config/ghostty/shaders/crt-chromatic.glsl
-# custom-shader              = ~/.config/ghostty/shaders/rgbsplit.glsl
+custom-shader              = ~/.config/ghostty/shaders/rgbsplit.glsl
 custom-shader              = ~/.config/ghostty/shaders/cursor/cursor_smear.glsl
 # custom-shader              = ~/.config/ghostty/shaders/glitchy.glsl
 # custom-shader              = ~/.config/ghostty/shaders/dither.glsl
