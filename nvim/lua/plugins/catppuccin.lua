@@ -533,7 +533,7 @@ local customCol = function(C)
                 MiniFilesDirectory               = { fg = ivory },
                 MiniFilesFile                    = { link = "Comment" },
                 MiniFilesCursorLine              = { link = "Visual" },
-                MiniFilesBorder                  = { link = "NormalFloat" },
+                MiniFilesBorder                  = { link = "Normal" },
                 -- LightBulbSign                    = { fg = spark },
                 TreesitterContext                = { bg = C.mantle, bold = true },
                 LspReferenceText                 = { link = "Visual" },
