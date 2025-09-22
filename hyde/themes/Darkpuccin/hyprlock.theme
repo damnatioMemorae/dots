@@ -2,9 +2,11 @@ $HOME/.config/hypr/hyprlock.conf
 # BACKGROUND
 background {
         monitor             =
-        color               = rgba(17, 17, 27, 80)
+        # color               = rgba(17, 17, 27, 80)
+        # color               = rgb(14, 14, 22)
         blur_passes         = 2
-        noise               = 0.14
+        noise               = 0.0
+        path                = $HOME/.config/hyde/themes/Darkpuccin/wall.set
 }
 
 # GENERAL

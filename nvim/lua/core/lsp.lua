@@ -25,7 +25,7 @@ vim.lsp.enable({
         -- "emmylua_ls",
         "glsl_analyzer",
         "ts_ls",
-        -- "gopls",
+        "gopls",
         "jsonls",
         "lua_ls",
         "yamlls",

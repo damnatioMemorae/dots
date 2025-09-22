@@ -73,8 +73,10 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "custom/separators",
                         "pulseaudio#icon",
                         "pulseaudio",
-                        "cava",
-                        "custom/media",
+                        // "hyprland/window",
+                        // "mpris",
+                        // "cava",
+                        // "custom/media",
                         ""
                 ],
                 "modules-center": [
@@ -85,6 +87,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         // "custom/separators",
                         "custom/updates",
                         // "hyprland/workspaces",
+                        "custom/recording",
                         ""
                 ],
                 "modules-right": [
@@ -100,8 +103,8 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "cpu",
                         "memory#icon",
                         "memory",
-                        "custom/cpuinfo#icon",
-                        "custom/cpuinfo",
+                        "temperature#icon",
+                        "temperature",
                         "custom/gpuinfo#icon",
                         "custom/gpuinfo",
                         "battery#icon",
@@ -152,15 +155,16 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                 },
                 "hyprland/language": {
                         "format": "{}",
-                        "format-en": "🮆",
-                        // "format-ru": "▉",
+                        "format-en": "🮋",
                         "format-ru": "🬋",
+                        // "format-en": "",
+                        // "format-ru": "",
                         "on-click": "$HOME/.local/share/bin/keyboardswitch"
                 },
                 "cava": {
                         "framerate": 120,
                         "autosens": 1,
-                        "bars": 20,
+                        "bars": 40,
                         "method": "pulse",
                         "source": "auto",
                         "stereo": false,
@@ -182,6 +186,17 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         ],
                         "actions": {
                                 "on-click-right": "mode"
+                        }
+                },
+                "mpris": {
+                        "format": "{player_icon} [{player}] {title} - {artist}",
+                        "format-paused": "{status_icon} <i>{dynamic}</i>",
+                        "player-icons": {
+                                "default": "▶",
+                                "mpv": "🎵"
+                        },
+                        "status-icons": {
+                                "paused": "⏸"
                         }
                 },
                 "custom/media": {
@@ -293,9 +308,16 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "max-length": 6
                 },
                 "hyprland/submap": {
-                        "format": "🮆",
+                        "format": "🮋",
                         "max-length": 8,
                         "tooltip": false
+                },
+                "custom/recording": {
+                        "exec": "$HOME/.local/share/bin/recording",
+                        "format": " {}",
+                        "max-length": 8,
+                        "tooltip": false,
+                        "interval": 1
                 },
                 "custom/wifi": {
                         "exec": "$HOME/.config/waybar/scripts/wifiinfo",
@@ -314,7 +336,7 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "on-click": "$HOME/.local/share/bin/wifimenu -o i",
                         "interval": 1,
                         "min-length": 1,
-                        "max-length": 12
+                        "max-length": 20
                 },
                 "cpu#icon": {
                         "states": {
@@ -341,23 +363,23 @@ $HOME/.config/waybar/top.jsonc|killall waybar && $HOME/.local/share/bin/waybarsw
                         "min-length": 1,
                         "max-length": 6
                 },
-                "custom/cpuinfo#icon": {
-                        "format": "",
-                        "tooltip": false,
-                        "interval": 5,
-                        "min-length": 1,
-                        "max-length": 10
+
+                //──────────────────────────────────────────────────────────────────────────────────────────────────────
+                // CPU TEMPERATURE
+
+                "temperature#icon": {
+                        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input",
+                        "critical-treshold": 40,
+                        "interval": 1,
+                        "format": ""
                 },
-                "custom/cpuinfo": {
-                        "exec": "$HOME/.local/share/bin/cpuinfo",
-                        "return-type": "json",
-                        "format": "{}",
-                        "on-click": "$HOME/.local/share/bin/cpu",
-                        "tooltip": true,
-                        "interval": 5,
-                        "min-length": 4,
-                        "max-length": 8
+                "temperature": {
+                        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input",
+                        "critical-treshold": 40,
+                        "interval": 1,
+                        "format": "{temperatureC}°C"
                 },
+
                 "custom/gpuinfo#icon": {
                         "format": "󰢮",
                         "tooltip": false,

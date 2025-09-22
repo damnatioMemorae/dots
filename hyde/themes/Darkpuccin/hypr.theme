@@ -51,19 +51,22 @@ group {
 decoration {
         # screen_shader                       = ~/.config/hypr/shaders/chromatic.frag
         rounding                              = 0
+        # active_opacity                        = 0.90
+        # inactive_opacity                      = 0.90
+        # fullscreen_opacity                    = 0.90
         active_opacity                        = 1
         inactive_opacity                      = 1
         fullscreen_opacity                    = 1
         dim_inactive                          = true
-        dim_strength                          = 0.2
+        dim_strength                          = 0.4
         shadow {
-                enabled                       =                         false
+                enabled                       = false
         }
         blur {
                 enabled                       = true
-                passes                        = 2
-                size                          = 2
-                new_optimizations             = true
+                passes                        = 4
+                size                          = 1
+                new_optimizations             = false
                 xray                          = false
                 noise                         = 0.0
                 contrast                      = 1.0
@@ -79,25 +82,29 @@ plugin {
                 no_gaps_when_only             = 0
                 node_collapse_policy          = 0
                 tabs {
-                        height                = 24
+                        height                = 18
                         padding               = 0
                         radius                = 0
-                        text_center           = false
+                        text_center           = true
                         text_font             = Monocraft
                         text_height           = 10
-                        text_padding          = 8
-                        col.active            = rgb(11111b)
+                        text_padding          = 6
+
+                        col.active            = rgb(0e0e16)
                         col.active.text       = rgb(cdd6f4)
-                        col.active.border     = rgb(11111b)
-                        col.focused           = rgb(11111b)
+                        col.active.border     = rgb(0e0e16)
+
+                        col.focused           = rgb(0e0e16)
                         col.focused.text      = rgb(cdd6f4)
-                        col.focused.border    = rgb(11111b)
-                        col.inactive          = rgb(313244)
-                        col.inactive.text     = rgb(9399b2)
-                        col.inactive.border   = rgb(313244)
-                        col.urgent            = rgb(f38ba8)
-                        col.urgent.text       = rgb(11111b)
-                        col.urgent.border     = rgb(f38ba8)
+                        col.focused.border    = rgb(0e0e16)
+
+                        col.inactive          = rgb(0e0e16)
+                        col.inactive.text     = rgb(313244)
+                        col.inactive.border   = rgb(0e0e16)
+
+                        col.urgent            = rgb(281d29)
+                        col.urgent.text       = rgb(f38ba8)
+                        col.urgent.border     = rgb(281d29)
                 }
                 autotile {
                         enable                = false
