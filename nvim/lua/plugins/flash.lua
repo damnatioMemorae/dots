@@ -52,7 +52,7 @@ return {
                 },
                 modes  = {
                         char   = { enabled = false },
-                        search = { enabled = true },
+                        search = { enabled = false },
                 },
         },
         config = function(_, opts)
