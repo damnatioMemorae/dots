@@ -28,6 +28,7 @@ vim.lsp.enable({
         -- "gopls",
         "jsonls",
         "lua_ls",
+        "yamlls",
         -- "pylsp",
         -- "pylyzer",
         "pyright",

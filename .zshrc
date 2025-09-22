@@ -265,3 +265,7 @@ bindkey -s "^[u" 'up \n'
 if [[ -n "$ZSH_DEBUGRC" ]]; then
         zprof
 fi
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/q/.lmstudio/bin"
+# End of LM Studio CLI section

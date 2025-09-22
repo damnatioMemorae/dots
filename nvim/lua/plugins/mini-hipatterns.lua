@@ -5,8 +5,8 @@ return {
         config  = function()
                 local hipatterns       = require("mini.hipatterns")
                 local words            = {
-                        ["ivory"]            = "#dce0e8",
-                        ["spark"]            = "#add8e6",
+                        ["ivory"]       = "#dce0e8",
+                        ["spark"]       = "#add8e6",
                         ["C.rosewater"] = "#f5e0dc",
                         ["C.flamingo"]  = "#f2cdcd",
                         ["C.pink"]      = "#f5c2e7",
@@ -31,8 +31,8 @@ return {
                         ["C.surface1"]  = "#45475a",
                         ["C.surface0"]  = "#313244",
                         ["C.base"]      = "#1e1e2e",
-                        ["C.mantle"]    = "#181825",
-                        ["C.crust"]     = "#11111b",
+                        ["C.mantle"]    = "#14141f",
+                        ["C.crust"]     = "#0e0e16",
                 }
                 local word_color_group = function(_, match)
                         local hex = words[match]
@@ -49,7 +49,7 @@ return {
                                 note       = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
 
                                 word_color = { pattern = "%f[%w]()%S+()%f[%W]", group = word_color_group },
-                                hex_color  = hipatterns.gen_highlighter.hex_color()
+                                hex_color  = hipatterns.gen_highlighter.hex_color(),
                         },
                 })
         end,

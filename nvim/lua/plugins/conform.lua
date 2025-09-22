@@ -14,6 +14,7 @@ return {
                         javascript = { "prettierd", "prettier" },
                         jsonc      = { "prettierd", "prettier" },
                         json       = { "prettierd", "prettier" },
+                        yaml       = { "prettierd", "prettier" },
                         python     = { "ruff", "isort", "black" },
                         sh         = { "shfmt" },
                         zsh        = { "shfmt" },
