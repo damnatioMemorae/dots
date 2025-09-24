@@ -272,31 +272,25 @@ api.nvim_create_autocmd("LspAttach", {
                         vim.keymap.set("n", keys, func, { buffer = args.buf, desc = "LSP: " .. desc })
                 end
 
-                -- map("K", vim.lsp.buf.hover, "󰏪 Hover Documentation")
-                vim.api.nvim_set_keymap("n", "K", "", {
-                        callback = function ()
-                                pcall(vim.lsp.buf.hover)
-                                pcall(vim.diagnostic.open_float)
-                        end
-                })
+                vim.keymap.set("n", ",", "gr", {})
+                map("K", vim.lsp.buf.hover, "󰏪 Hover Documentation")
                 map("J", vim.lsp.buf.signature_help, "󰏪 Signature Help")
                 -- map("gD", vim.lsp.buf.declaration, " Goto Declaration")
                 -- map("gd", vim.lsp.buf.definition, " Goto Definition")
-                map(",i", vim.lsp.buf.implementation, " Goto Implementation")
-                map(",r", vim.lsp.buf.references, " Goto Implementation")
-                map(",I", vim.lsp.buf.incoming_calls, "Incoming calls")
-                map(",c", vim.lsp.buf.code_action, "󱠀 Code Action")
-                map(",a", function() require("functions.quickfix").code_actions() end, "󱠀 Quickfix")
-                -- map("<leader><leader>c", function() require("tiny-code-action").code_action() end, "󱠀 Code Action Picker")
-                map(", ", function() require("tiny-code-action").code_action() end, "󱠀 Code Action Picker")
-                -- map("<leader>f", vim.lsp.buf.format, "󰏪 Format Buffer")
-                map(",e", vim.diagnostic.open_float, "■ Diagnostic Float")
+                map("gri", vim.lsp.buf.implementation, " Goto Implementation")
+                map("grr", vim.lsp.buf.references, " Goto Implementation")
+                map("grI", vim.lsp.buf.incoming_calls, "Incoming calls")
+                map("grc", vim.lsp.buf.code_action, "󱠀 Code Action")
+                map("gra", function() require("functions.quickfix").code_actions() end, "󱠀 Quickfix")
+                map("gr ", function() require("tiny-code-action").code_action() end, "󱠀 Code Action Picker")
+                map("gre", vim.diagnostic.open_float, "■ Diagnostic Float")
                 map("<A-d>", function()
-                            vim.diagnostic.goto_next({ float = false })
+                            -- vim.diagnostic.goto_next({ float = false })
+                            vim.diagnostic.jump({ count = 1, float = false })
                             vim.cmd.normal("zz")
                     end, "■ Diagnostic Next")
                 map("<A-D>", function()
-                            vim.diagnostic.goto_prev({ float = false })
+                            vim.diagnostic.jump({ count = -1, float = false })
                             vim.cmd.normal("zz")
                     end, "■ Diagnostic Prev")
 
@@ -329,6 +323,7 @@ api.nvim_create_autocmd("LspAttach", {
 
 ------------------------------------------------------------------------------------------------------------------------
 -- CODELENS
+
 api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
                 local client = assert(vim.lsp.get_client_by_id(args.data.client_id))

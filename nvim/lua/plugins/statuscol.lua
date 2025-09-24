@@ -9,6 +9,7 @@ return {
                         bt_ingore   = { "nofile", "Outline" },
                         segments    = {
                                 {
+                                        -- text = {""},
                                         sign = {
                                                 namespace = { "gitsigns" },
                                                 maxwidth  = 1,

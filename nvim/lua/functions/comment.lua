@@ -18,24 +18,24 @@ function M.commentHr()
         local startLn = vim.api.nvim_win_get_cursor(0)[1]
 
         -- determine indent
-        local ln = startLn
+        local ln      = startLn
         local line, indent
         repeat
-                line = vim.api.nvim_buf_get_lines(0, ln - 1, ln, true)[1]
+                line   = vim.api.nvim_buf_get_lines(0, ln - 1, ln, true)[1]
                 indent = line:match("^%s*")
-                ln = ln - 1
+                ln     = ln - 1
         until line ~= "" or ln == 0
 
         -- determine hrLength
-        local indentLength = vim.bo.expandtab and #indent or #indent * vim.bo.tabstop
-        local comStrLength = #(comStr:format(""))
-        local textwidth = vim.o.textwidth > 0 and vim.o.textwidth or 80
-        local hrLength = textwidth - (indentLength + comStrLength)
+        local indentLength         = vim.bo.expandtab and #indent or #indent * vim.bo.tabstop
+        local comStrLength         = #(comStr:format(""))
+        local textwidth            = vim.o.textwidth > 0 and vim.o.textwidth or 80
+        local hrLength             = textwidth - (indentLength + comStrLength)
 
         -- construct HR
-        local hrChar = comStr:find("%-") and "-" or "─"
-        local hr = hrChar:rep(hrLength)
-        local hrWithComment = comStr:format(hr)
+        local hrChar               = comStr:find("%-") and "-" or "─"
+        local hr                   = hrChar:rep(hrLength)
+        local hrWithComment        = comStr:format(hr)
 
         -- filetype-specific considerations
         local formatterWantPadding = { "python", "css", "scss" }
@@ -54,10 +54,10 @@ function M.duplicateLineAsComment()
         local comStr = getCommentstr()
         if not comStr then return end
 
-        local lnum, col = unpack(vim.api.nvim_win_get_cursor(0))
-        local curLine = vim.api.nvim_get_current_line()
+        local lnum, col       = unpack(vim.api.nvim_win_get_cursor(0))
+        local curLine         = vim.api.nvim_get_current_line()
         local indent, content = curLine:match("^(%s*)(.*)")
-        local commentedLine = indent .. comStr:format(content)
+        local commentedLine   = indent .. comStr:format(content)
         vim.api.nvim_buf_set_lines(0, lnum - 1, lnum, false, { commentedLine, curLine })
         vim.api.nvim_win_set_cursor(0, { lnum + 1, col })
 end
@@ -75,10 +75,10 @@ function M.docstring()
                 vim.api.nvim_win_set_cursor(0, { ln + 1, #indent + 3 })
                 vim.cmd.startinsert()
         elseif ft == "javascript" then
-                vim.cmd.normal{ "t)", bang = true } -- go to parameter, since cursor has to be on diagnostic for code action
+                vim.cmd.normal{ "t)", bang = true }  -- go to parameter, since cursor has to be on diagnostic for code action
                 vim.lsp.buf.code_action{
                         filter = function(action) return action.title == "Infer parameter types from usage" end,
-                        apply = true,
+                        apply  = true,
                 }
                 -- goto docstring (delayed, so code action can finish first)
                 vim.defer_fn(function()
@@ -113,24 +113,24 @@ function M.addComment(where)
 
         -- determine comment behavior
         local placeHolderAtEnd = comStr:find("%%s$") ~= nil
-        local line = vim.api.nvim_get_current_line()
-        local emptyLine = line == ""
+        local line             = vim.api.nvim_get_current_line()
+        local emptyLine        = line == ""
 
         -- if empty line, add indent of first non-blank line after cursor
-        local indent = ""
+        local indent           = ""
         if emptyLine then
-                local i = lnum
+                local i        = lnum
                 local lastLine = vim.api.nvim_buf_line_count(0)
                 while vim.fn.getline(i) == "" and i < lastLine do
                         i = i + 1
                 end
                 indent = vim.fn.getline(i):match("^%s*")
         end
-        local spacing = vim.bo.ft == "python" and "  " or " " -- black/ruff demand two spaces
+        local spacing = vim.bo.ft == "python" and "  " or " "  -- black/ruff demand two spaces
         local newLine = emptyLine and indent or line .. spacing
 
         -- write line
-        comStr = comStr:gsub("%%s", ""):gsub(" $", "") .. " "
+        comStr        = comStr:gsub("%%s", ""):gsub(" $", "") .. " "
         vim.api.nvim_set_current_line(newLine .. comStr)
 
         -- move cursor
@@ -138,7 +138,7 @@ function M.addComment(where)
                 vim.cmd.startinsert{ bang = true }
         else
                 local placeholderPos = vim.bo.commentstring:find("%%s") - 1
-                local newCursorPos = { lnum, #newLine + placeholderPos }
+                local newCursorPos   = { lnum, #newLine + placeholderPos }
                 vim.api.nvim_win_set_cursor(0, newCursorPos)
                 vim.cmd.startinsert()
         end
