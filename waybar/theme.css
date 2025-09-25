@@ -7,7 +7,7 @@ br - border
 /* Main Colors */
 /* @define-color main-bg               rgba(17, 17, 27, 0.0); */
 @define-color none                  rgba(17, 17, 27, 0);
-@define-color main-bg               #0e0e16;
+@define-color main-bg               #000000;
 @define-color main-fg               #cdd6f4;
 @define-color main-br               #cdd6f4;
 
@@ -19,13 +19,13 @@ br - border
 
 /* Module Colors */
 @define-color module-fg             #f5e0dc;
-@define-color module-bg             #1e1e2e;
+@define-color module-bg             #000000;
 
-@define-color media                 #1e1e2e;
-@define-color blank-fg              #0e0e0e;
-@define-color blank-bg              #313244;
-@define-color block-bg              #0e0e16;
-@define-color empty-fg              #1e1e2e;
+@define-color media                 #000000;
+@define-color blank-fg              #000000;
+@define-color blank-bg              #000000;
+@define-color block-bg              #000000;
+@define-color empty-fg              #000000;
 
 /* State Colors */
 @define-color full                  #a6e3a1;
@@ -35,12 +35,12 @@ br - border
 @define-color critical              #f38ba8;
 @define-color charging              #add8e6;
 
-@define-color fullTr                #202628;
-@define-color goodTr                #202628;
-@define-color normTr                #1b1b28;
-@define-color warningTr             #28262a;
-@define-color criticalTr            #281d29;
-@define-color chargingTr            #21252f;
+@define-color fullTr                #000000;
+@define-color goodTr                #000000;
+@define-color normTr                #000000;
+@define-color warningTr             #000000;
+@define-color criticalTr            #000000;
+@define-color chargingTr            #000000;
 
 @define-color min                   #313244;
 @define-color midl                  #585b70;

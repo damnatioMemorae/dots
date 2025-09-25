@@ -1,5 +1,4 @@
 $HOME/.config/ghostty/themes/theme
-
 background             = #0e0e16
 foreground             = #a6adc8
 selection-foreground   = #f38ba8

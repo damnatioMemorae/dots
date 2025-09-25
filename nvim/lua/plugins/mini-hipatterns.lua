@@ -4,6 +4,7 @@ return {
         event   = "VeryLazy",
         config  = function()
                 local hipatterns       = require("mini.hipatterns")
+
                 local words            = {
                         ["ivory"]       = "#dce0e8",
                         ["spark"]       = "#add8e6",
@@ -34,10 +35,23 @@ return {
                         ["C.mantle"]    = "#14141f",
                         ["C.crust"]     = "#0e0e16",
                 }
+
                 local word_color_group = function(_, match)
                         local hex = words[match]
                         if hex == nil then return nil end
                         return hipatterns.compute_hex_color_group(hex, "bg")
+                end
+
+                local hsl_to_hex       = function(h, s, l)
+                        -- Actually convert h, s, l numbers into hex color in '#RRGGBB' format
+                        return "#111111"
+                end
+
+                local hsl_color        = function(_, match)
+                        local h, s, l   = match:match("hsl%((%d+) (%d+)%% (%d+)%%%)")
+                        h, s, l         = tonumber(h), tonumber(s), tonumber(l)
+                        local hex_color = hsl_to_hex(h, s, l)
+                        return hipatterns.compute_hex_color_group(hex_color, "bg")
                 end
 
                 hipatterns.setup({
@@ -48,8 +62,19 @@ return {
                                 todo       = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
                                 note       = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
 
-                                word_color = { pattern = "%f[%w]()%S+()%f[%W]", group = word_color_group },
                                 hex_color  = hipatterns.gen_highlighter.hex_color(),
+                                word_color = { pattern = "%f[%w]()%S+()%f[%W]", group = word_color_group },
+                                hsl_color  = {
+                                        pattern = "hsl%(%d+,? %d+,? %d+%)",
+                                        -- group = hsl_color()
+                                        group = function(_, match)
+                                                local utils     = require("core.utils")
+                                                local h, s, l   = match:match("hsl%((%d+),? (%d+),? (%d+)%)")
+                                                h, s, l         = tonumber(h), tonumber(s), tonumber(l)
+                                                local hex_color = utils.hslToHex(h, s, l)
+                                                return hipatterns.compute_hex_color_group(hex_color, "bg")
+                                        end,
+                                },
                         },
                 })
         end,

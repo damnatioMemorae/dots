@@ -1,3 +1,4 @@
+$HOME/.config/waybar/top.css
 /* Global Styling */
 * {
         font-family: "Monocraft";

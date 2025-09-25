@@ -1,3 +1,4 @@
+$HOME/.config/waybar/top.css
 /* Global Styling */
 * {
         font-family: "Monocraft";
@@ -124,7 +125,7 @@
 
 #backlight.icon {
         color: @blank-fg;
-        background: @main-bg;
+        background: @blank-bg;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-left: 8px;
@@ -136,28 +137,28 @@
 }
 
 #backlight.icon.min {
-        color: @min;
-        background: @main-bg;
+        color: @max;
+        background: @min;
 }
 
 #backlight.icon.midl {
-        color: @midl;
-        background: @main-bg;
+        color: @midh;
+        background: @midl;
 }
 
 #backlight.icon.mid {
-        color: @mid;
-        background: @main-bg;
+        color: @min;
+        background: @mid;
 }
 
 #backlight.icon.midh {
-        color: @midh;
-        background: @main-bg;
+        color: @min;
+        background: @midh;
 }
 
 #backlight.icon.max {
-        color: @max;
-        background: @main-bg;
+        color: @main-bg;
+        background: @max;
 }
 
 #backlight {
@@ -199,28 +200,28 @@
 }
 
 #pulseaudio.icon.min {
-        color: @min;
-        background: @blank-bg;
+        color: @max;
+        background: @min;
 }
 
 #pulseaudio.icon.midl {
-        color: @midl;
-        background: @blank-bg;
+        color: @midh;
+        background: @midl;
 }
 
 #pulseaudio.icon.mid {
-        color: @mid;
-        background: @blank-bg;
+        color: @min;
+        background: @mid;
 }
 
 #pulseaudio.icon.midh {
-        color: @midh;
-        background: @blank-bg;
+        color: @min;
+        background: @midh;
 }
 
 #pulseaudio.icon.max {
-        color: @max;
-        background: @blank-bg;
+        color: @main-bg;
+        background: @max;
 }
 
 #pulseaudio {
@@ -247,8 +248,8 @@
 }
 
 #custom-wifi {
-        color: @main-fg;
-        background: @main-bg;
+        color: @main-bg;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -260,7 +261,7 @@
 
 #network {
         color: @main-fg;
-        background: @main-bg;
+        background: @normTr;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 10px;
@@ -271,8 +272,8 @@
 }
 
 #cpu.icon {
-        color: @norm;
-        background: @main-bg;
+        color: @main-bg;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -283,18 +284,18 @@
 }
 
 #cpu.icon.norm {
-        color: @norm;
-        background: @main-bg;
+        color: @main-bg;
+        background: @norm;
 }
 
 #cpu.icon.warning {
-        color: @warning;
-        background: @warningTr;
+        color: @warningTr;
+        background: @warning;
 }
 
 #cpu.icon.critical {
-        color: @critical;
-        background: @criticalTr;
+        color: @criticalTr;
+        background: @critical;
 }
 
 #cpu {
@@ -328,8 +329,8 @@
 /* CPU TEMPERATURE */
 
 #temperature.icon {
-        color: @main-fg;
-        background-color: @normTr;
+        color: @normTr;
+        background-color: @main-fg;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -340,8 +341,8 @@
 }
 
 #temperature.icon.critical {
-        color: @critical;
-        background-color: @criticalTr;
+        color: @criticalTr;
+        background-color: @critical;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -400,8 +401,8 @@
 }
 
 #custom-gpuinfo.icon {
-        color: @norm;
-        background: @main-bg;
+        color: @main-bg;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -424,8 +425,8 @@
 }
 
 #memory.icon {
-        color: @norm;
-        background: @main-bg;
+        color: @main-bg;
+        background: @norm;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -438,18 +439,18 @@
 }
 
 #memory.icon.norm {
-        color: @norm;
-        background: @main-bg;
+        color: @main-bg;
+        background: @norm;
 }
 
 #memory.icon.warning {
-        color: @warning;
-        background: @warningTr;
+        color: @warningTr;
+        background: @warning;
 }
 
 #memory.icon.critical {
-        color: @critical;
-        background: @criticalTr;
+        color: @criticalTr;
+        background: @critical;
 }
 
 #memory {
@@ -480,8 +481,8 @@
 }
 
 #battery.icon {
-        color: @main-fg;
-        background: @blank-fg;
+        color: @blank-fg;
+        background: @main-fg;
         margin-top: 6px;
         margin-bottom: 6px;
         margin-right: 0px;
@@ -492,28 +493,28 @@
 }
 
 #battery.icon.full {
-        color: @full;
-        background: @fullTr;
+        color: @fullTr;
+        background: @full;
 }
 
 #battery.icon.good {
-        color: @good;
-        background: @goodTr;
+        color: @goodTr;
+        background: @good;
 }
 
 #battery.icon.warning {
-        color: @warning;
-        background: @warningTr;
+        color: @warningTr;
+        background: @warning;
 }
 
 #battery.icon.critical {
-        color: @critical;
-        background: @criticalTr;
+        color: @criticalTr;
+        background: @critical;
 }
 
 #battery.icon.charging {
-        color: @charging;
-        background: @chargingTr;
+        color: @chargingTr;
+        background: @charging;
 }
 
 #battery {

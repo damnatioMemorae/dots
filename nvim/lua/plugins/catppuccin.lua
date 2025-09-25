@@ -543,10 +543,10 @@ local customCol = function(C)
                 -- LspReferenceText                 = { link = "LspInlayHint" },
                 LspReferenceWrite                = { link = "LspReferenceText" },
                 LspReferenceRead                 = { link = "LspReferenceWrite" },
-                MiniHipatternsNote               = { fg = C.crust, bg = C.red, italic = true, bold = true },
-                MiniHipatternsTodo               = { fg = C.crust, bg = C.red, italic = true, bold = true },
+                MiniHipatternsNote               = { fg = C.crust, bg = C.sky, italic = true, bold = true },
+                MiniHipatternsTodo               = { fg = C.crust, bg = C.teal, italic = true, bold = true },
+                MiniHipatternsHack               = { fg = C.crust, bg = C.yellow, italic = true, bold = true },
                 MiniHipatternsFixme              = { fg = C.crust, bg = C.red, italic = true, bold = true },
-                MiniHipatternsHack               = { fg = C.crust, bg = C.red, italic = true, bold = true },
                 --[[ Treesitter Context highlights
                 TreesitterContextLineNumber       = { link = "LineNr" },
                 TreesitterContext                 = { link = "NormalFloat" },
@@ -577,8 +577,8 @@ return {
                         no_underline           = false,
                         color_overrides        = {
                                 mocha = {
-                                        crust  = "#0e0e16",
-                                        mantle = "#14141f",
+                                        crust  = "#000000",
+                                        mantle = "#000000",
                                 },
                         },
                         custom_highlights      = customCol,
