@@ -43,10 +43,10 @@ br - border
 @define-color criticalTr            #000000;
 @define-color chargingTr            #000000;
 
-@define-color min                   #313244;
-@define-color midl                  #585b70;
-@define-color mid                   #7f849c;
-@define-color midh                  #a6adc8;
+@define-color min                   #dce0e8;
+@define-color midl                  #dce0e8;
+@define-color mid                   #dce0e8;
+@define-color midh                  #dce0e8;
 @define-color max                   #dce0e8;
 
 @define-color rosewater             #f5e0dc;
