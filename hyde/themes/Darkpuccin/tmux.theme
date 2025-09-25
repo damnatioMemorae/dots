@@ -1,3 +1,4 @@
+$HOME/.config/tmux/tmux.conf && tmux source-file $HOME/.config/tmux/tmux.conf
 # ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 # PLUGINS
 
@@ -96,12 +97,12 @@ set -g status-left "#[fg=#add8e6] #S "
 # set -g status-right "#[fg=#add8e6] █ █ █"
 # set -g status-right "#[align=absolute-centre]#[fg=#add8e6]#(iwgetid -r)  #(acpi -b | grep -m 1 -oP '\\d+%' | tr -d '%')#[align=right] %H:%M"
 # set -g status-right "#[align=absolute-centre]#[fg=#f38ba8]#(~/.config/waybar/scripts/recording)#[fg=#add8e6]#(~/.config/tmux/scripts/language)#(~/.local/share/bin/systemupdate | jq -r '.text')#[align=right]#(acpi -b | grep -m 1 -oP '\\d+%' | tr -d '%') %H:%M"
-set -g status-right "#[fg=#dce0e8]#[bold]    #[bg=#21252f]#(~/.config/tmux/scripts/brightness)#[bg=black] \
+set -g status-right "#[fg=#add8e6]#[bold]    #[bg=#21252f]#(~/.config/tmux/scripts/brightness)#[bg=black] \
 #[bg=#21252f]#(~/.config/tmux/scripts/volume)#[bg=black] \
-#[fg=#dce0e8]#(~/.config/tmux/scripts/language)#[bg=#21252f]#(~/.config/tmux/scripts/battery)#[bg=black]\
+#[fg=#add8e6]#(~/.config/tmux/scripts/language)#[bg=#21252f]#(~/.config/tmux/scripts/battery)#[bg=black]\
 #[fg=#f38ba8] #(~/.local/share/bin/recording)#[bg=black]"
-#[fg=#dce0e8]#(~/.config/tmux/scripts/update | jq -r '.text')
-set -g window-status-current-format "#[fg=#f9e2af]**#[fg=#dce0e8]#[bold]#{?#{==:#W,zsh},#(echo '#{pane_current_command}'),#W}"
+#[fg=#add8e6]#(~/.config/tmux/scripts/update | jq -r '.text')
+set -g window-status-current-format "#[fg=#f9e2af]**#[fg=#add8e6]#[bold]#{?#{==:#W,zsh},#(echo '#{pane_current_command}'),#W}"
 set -g window-status-format         "#{?#{==:#W,zsh},#[fg=#313244]#I:#(echo '#{pane_current_command}'),#[fg=#f9e2af]*#[fg=#cba6f7]#W}"
 # set -g window-status-format '#{?window_bell_flag,#[bg=red],}#{?window_last_flag,#[bg=darkgreen],}#{?window_flags,#I,#[fg=white]#I#[fg=default]#[fg=white]}#W#{?window_flags, ,}#{?window_active,󰎂 ,}#{?window_last_flag, ,}#{?window_marked_flag,󰃃 ,}#{?window_activity_flag, ,}#{?window_bell_flag, ,}#{?window_silence_flag,󰝟 ,}#{?window_zoomed_flag,󰨤 ,}#[fg=default]'
 
