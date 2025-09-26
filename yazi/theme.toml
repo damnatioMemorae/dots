@@ -131,7 +131,7 @@ rules = [
 "Library/"       = ""
 "Development/"   = ""
 ".config/"       = ""
-"/hypr/"  = ""
+"/hypr/"         = ""
 
 # Git
 ".git/"          = ""

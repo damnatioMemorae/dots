@@ -157,8 +157,8 @@ repo() {
         git init
         git add --all
         git commit --allow-empty-message -m ""
-        git remote add origin  "$0"
         git branch -M main
+        git remote add origin  "$0"
         git push -u origin main
 }
 

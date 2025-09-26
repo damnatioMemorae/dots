@@ -146,7 +146,9 @@ return {
                         },
                 },
                 sources    = {
-                        -- default      = { "snippets", "lsp", "path", "buffer", },
+                        default = { "snippets", "lsp", "path", "buffer" },
+
+                        --[[ COMMENT AWARE COMPLETION
                         default      = function(ctx)
                                 local success, node = pcall(vim.treesitter.get_node)
                                 if success and node and vim.tbl_contains({ "comment", "line_comment", "block_comment" }, node:type()) then
@@ -154,11 +156,11 @@ return {
                                 else
                                         return { "snippets", "lsp", "path", "buffer" }
                                 end
-                        end,
+                        end, --]]
                         per_filetype = {
                                 ["rip-substitute"] = { "ripgrep", "buffer" },
                                 gitcommit          = {},
-                                lua                = { inherit_defaults = true, "ripgrep" },
+                                lua                = { inherit_defaults = true, "ripgrep", "env" },
                                 c                  = { inherit_defaults = true, "ripgrep", "env" },
                                 cpp                = { inherit_defaults = true, "ripgrep", "env" },
                                 css                = { inherit_defaults = true, "ripgrep", "nerdfont", "css_vars" },
@@ -182,6 +184,7 @@ return {
                                         enabled      = function()
                                                 if vim.bo.ft ~= "lua" then return true end
                                                 local col                 = vim.api.nvim_win_get_cursor(0)[2]
+                                                ---@diagnostic disable-next-line: param-type-not-match, need-check-nil
                                                 local charsBefore         = vim.api.nvim_get_current_line():sub(col - 2,
                                                                                                                 col)
                                                 local luadocButNotComment = not charsBefore:find("^%-%-?$")

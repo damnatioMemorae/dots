@@ -1,7 +1,8 @@
+---@diagnostic disable: assign-type-mismatch
 ------------------------------------------------------------------------------------------------------------------------
 -- LSP SERVERS
 
-local capabilities = {
+local _capabilities = {
         textDocument = {
                 foldingRange = {
                         dynamicRegistration = false,
@@ -10,6 +11,8 @@ local capabilities = {
         },
 }
 
+---@diagnostic disable-next-line: unknown-diag-code
+---@diagnostic disable-next-line: param-type-not-match
 vim.lsp.config("*", {
         root_markers = { ".git" },
 })
@@ -27,7 +30,7 @@ vim.lsp.enable({
         "ts_ls",
         "gopls",
         "jsonls",
-        "lua_ls",
+        -- "lua_ls",
         "yamlls",
         -- "pylsp",
         -- "pylyzer",
@@ -46,11 +49,13 @@ vim.api.nvim_create_autocmd("FileType", {
                 local settings_path  = root .. "/gopls.json" or "/gopls.jsonc"
 
                 local gopls_settings = {}
+                ---@diagnostic disable-next-line: undefined-field
                 local stat           = vim.uv.fs_stat(settings_path)
                 if stat and stat.type == "file" then
                         local ok, parsed = pcall(function()
                                 return vim.fn.json_decode(vim.fn.readfile(settings_path))
                         end)
+                        ---@diagnostic disable-next-line: assign-type-mismatch
                         if ok then gopls_settings = parsed end
                 end
 
@@ -67,7 +72,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- DIAGNOSTICS
 
 ---@diagnostic disable-next-line: unused-local
-local icons   = require("core.icons").diagnostics
+local _icons   = require("core.icons").diagnostics
 local numbers = {
         text = {
                 [vim.diagnostic.severity.ERROR] = "",
@@ -169,7 +174,7 @@ vim.api.nvim_create_autocmd("LspProgress", {
                 local p = progress[client.id]
 
                 for i = 1, #p + 1 do
-                        if i == #p + 1 or p[i].token == ev.data.params.token then
+                        if i == #p + 1 or p[i] --[[@cast -?]].token == ev.data.params.token then
                                 p[i] = {
                                         token = ev.data.params.token,
                                         msg   = ("[%3d%%] %s%s"):format(
@@ -185,15 +190,18 @@ vim.api.nvim_create_autocmd("LspProgress", {
 
                 local msg = {} ---@type string[]
                 progress[client.id] = vim.tbl_filter(function(v)
+                                                             ---@diagnostic disable-next-line: return-type-mismatch
                                                              return table.insert(msg, v.msg) or not v.done
                                                      end, p)
 
                 local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+                ---@diagnostic disable-next-line: param-type-not-match
                 vim.notify(table.concat(msg, "\n"), "info", {
                         id    = "lsp_progress",
                         title = client.name,
                         opts  = function(notif)
                                 notif.icon = #progress[client.id] == 0 and "■"
+                                           ---@diagnostic disable-next-line: undefined-field
                                            or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
                         end,
                 })

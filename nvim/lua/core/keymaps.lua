@@ -167,6 +167,8 @@ local textobjRemaps = {
         { "e", "`", "", "backtick" },
 }
 for _, value in pairs(textobjRemaps) do
+        ---@diagnostic disable-next-line: unknown-diag-code
+        ---@diagnostic disable-next-line: access-invisible
         local remap, original, icon, label = unpack(value)
         map({ "o", "x" }, "i" .. remap, "i" .. original, { desc = icon .. " inner " .. label })
         map({ "o", "x" }, "a" .. remap, "a" .. original, { desc = icon .. " outer " .. label })
@@ -202,7 +204,7 @@ map(n, "rq", function()
 ------------------------------------------------------------------------------------------------------------------------
 -- LSP
 
---[[
+--[[ LSP KEYMAPS
 map(n, "K", vim.lsp.buf.hover, { desc = "󰏪 Hover Documentation" })
 map(n, "J", vim.lsp.buf.signature_help, { desc = "󰏪 Signature Help" })
 map(n, ",e", vim.diagnostic.open_float, { desc = "󰨓 Diagnostic Float" })
@@ -213,15 +215,14 @@ map(n, ",I", vim.lsp.buf.incoming_calls, { desc = "Incoming calls" })
 map(n, ",c", vim.lsp.buf.code_action, { desc = "󱠀 Code Action" })
 map(n, ",a", function() require("functions.quickfix").code_actions() end, { desc = "󱠀 Quickfix" })
 map(n, "<leader><leader>c", function() require("tiny-code-action").code_action() end, { desc = "󱠀 Code Action Picker" })
-map("<leader>f", vim.lsp.buf.format, { desc = "󰏪 Format Buffer"})
---]]
+map("<leader>f", vim.lsp.buf.format, { desc = "󰏪 Format Buffer"}) --]]
 
 map(nxcvo, ",", "g", { silent = true })
 
 -- GOTO
 -- map(n, ",f", "gf", { desc = "Goto File", silent = true })
 
---[[
+--[[ HOVER
 do
         map(nx, "K", vim.lsp.buf.hover, { desc = "󰋽 LSP hover" })
         local function scrollLspWin(lines)
@@ -234,8 +235,7 @@ do
         end
         map(n, "<PageDown>", function() scrollLspWin(5) end, { desc = "↓ Scroll LSP window", silent = true })
         map(n, "<PageUp>", function() scrollLspWin(-5) end, { desc = "↑ Scroll LSP window", silent = true })
-end
-]]
+end --]]
 
 ------------------------------------------------------------------------------------------------------------------------
 -- INSERT MODE
@@ -356,6 +356,7 @@ map(n, "<leader>oo", function()
 -- RELOAD PLUGINS
 
 map(n, "<leader>lr", function()
+            ---@diagnostic disable-next-line: undefined-field
             local plugins      = require("lazy").plugins()
             local plugin_names = {}
             for _, plugin in ipairs(plugins) do
@@ -366,6 +367,7 @@ map(n, "<leader>lr", function()
                     plugin_names,
                     { title = "Reload plugin" },
                     function(selected)
+                            ---@diagnostic disable-next-line: undefined-field
                             require("lazy").reload({ plugins = { selected } })
                     end
             )

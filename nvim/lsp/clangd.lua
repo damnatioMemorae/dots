@@ -6,6 +6,7 @@ local function switch_source_header(bufnr)
                         method_name))
         end
         local params = vim.lsp.util.make_text_document_params(bufnr)
+        ---@diagnostic disable-next-line: param-type-not-match
         client.request(method_name, params, function(err, result)
                                if err then
                                        error(tostring(err))
@@ -21,11 +22,13 @@ end
 local function symbol_info()
         local bufnr         = vim.api.nvim_get_current_buf()
         local clangd_client = vim.lsp.get_clients({ bufnr = bufnr, name = "clangd" })[1]
+        ---@diagnostic disable-next-line: param-type-not-match
         if not clangd_client or not clangd_client.supports_method"textDocument/symbolInfo" then
                 return vim.notify("Clangd client not found", vim.log.levels.ERROR)
         end
         local win    = vim.api.nvim_get_current_win()
         local params = vim.lsp.util.make_position_params(win, clangd_client.offset_encoding)
+        ---@diagnostic disable-next-line: param-type-not-match
         clangd_client.request("textDocument/symbolInfo", params, function(err, res)
                                       if err or #res == 0 then
                                               -- Clangd always returns an error, there is not reason to parse it
@@ -41,6 +44,7 @@ local function symbol_info()
                                               border    = "single",
                                               title     = "Symbol Info",
                                       })
+                                      ---@diagnostic disable-next-line: param-type-not-match
                               end, bufnr)
 end
 

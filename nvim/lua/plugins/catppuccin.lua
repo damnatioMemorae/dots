@@ -1,8 +1,8 @@
 local ivory     = "#dce0e8"
 ---@diagnostic disable-next-line: unused-local
-local spark     = "#add8e6"
+local _spark    = "#add8e6"
 
-local noita     = {
+local _noita    = {
         mocha = {
                 --[[
                 rosewater = "#",
@@ -188,7 +188,7 @@ local customCol = function(C)
                 ["@tag.delimiter"]               = { fg = C.sky },
                 ["@tag"]                         = { fg = C.red },
                 ["@type.builtin"]                = { fg = C.yellow },
-                ["@type"]                        = { fg = C.yellow },
+                ["@type"]                        = { link = "Comment" },
                 ["@type.qualifier"]              = { fg = C.mauve },
                 ["@variable.builtin"]            = { fg = C.red, bg = "none" },
                 ["@variable"]                    = { fg = C.red, bg = "none" },
@@ -251,7 +251,7 @@ local customCol = function(C)
                 BlinkCmpKindOperator             = { link = "@lsp.type.operator" },
                 BlinkCmpKindProperty             = { link = "@lsp.type.property" },
                 BlinkCmpKindReference            = { link = "@function.call" },
-                BlinkCmpKindSnippet              = { link = "@keyword" },
+                BlinkCmpKindSnippet              = { link = "@module" },
                 BlinkCmpKindStruct               = { link = "@lsp.type.struct" },
                 BlinkCmpKindText                 = { link = "@comment" },
                 BlinkCmpKindTypeParameter        = { link = "@lsp.type.typeParameter" },
@@ -577,8 +577,10 @@ return {
                         no_underline           = false,
                         color_overrides        = {
                                 mocha = {
-                                        crust  = "#000000",
-                                        mantle = "#000000",
+                                        -- mantle = "#000000",
+                                        -- crust  = "#000000",
+                                        mantle = "#14141f",
+                                        crust  = "#0e0e16",
                                 },
                         },
                         custom_highlights      = customCol,

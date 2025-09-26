@@ -11,7 +11,7 @@ return {
                 "selene.yml",
                 ".git",
         },
-        ---[[,
+        ---[[
         on_init      = function(client)
                 if client.workspace_folders then
                         local path = client.workspace_folders[1].name
@@ -38,8 +38,7 @@ return {
                                 },
                         },
                 })
-        end,
-        --]]
+        end, --]]
         settings     = {
                 completion    = {
                         callSnippet = "Both",
