@@ -146,7 +146,7 @@ alias    start_20='/usr/lib/jvm/java-24-openjdk/bin/java -Xmx6144M -Xms1024M -ja
 alias          ta='tmux attach'
 
 # Git aliases
-alias        dots='git add --all && git commit --allow-empty-message -m "" && git push && clear'
+alias        dots='git add --all && git commit --allow-empty-message -m "" && git push'
 alias          ga='git add --all'
 alias          gc='git commit -m 1'
 alias          gp='git push'
