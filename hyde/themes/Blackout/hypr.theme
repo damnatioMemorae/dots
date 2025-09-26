@@ -21,7 +21,7 @@ exec = gsettings set org.gnome.desktop.interface font-hinting        "full"
 # exec = gsettings set org.gnome.desktop.interface cursor-size 20
 
 general {
-        border_size                           = 1
+        border_size                           = 0
         col.active_border                     = rgb(dce0e8)
         col.inactive_border                   = rgb(dce0e8)
         gaps_in                               = 0
@@ -55,7 +55,7 @@ decoration {
         inactive_opacity                      = 1
         fullscreen_opacity                    = 1
         dim_inactive                          = true
-        dim_strength                          = 0.8
+        dim_strength                          = 0.9
         shadow {
                 enabled                       = false
         }

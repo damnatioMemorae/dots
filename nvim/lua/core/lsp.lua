@@ -22,7 +22,7 @@ vim.lsp.enable({
         "cssls",
         "css_variables",
         "emmet",
-        -- "emmylua_ls",
+        "emmylua_ls",
         "glsl_analyzer",
         "ts_ls",
         "gopls",

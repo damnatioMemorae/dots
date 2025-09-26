@@ -1,55 +1,99 @@
 {
         "$schema": "https://raw.githubusercontent.com/EmmyLuaLs/emmylua-analyzer-rust/refs/heads/main/crates/emmylua_code_analysis/resources/schema.json",
+        "codeAction": {
+                "insertSpace": false
+        },
+        "codeLens": {
+                "enable": true
+        },
+        "completion": {
+                "enable": true,
+                "autoRequire": true,
+                "autoRequireFunction": "require",
+                "autoRequireNamingConvention": "camel-case",
+                "autoRequireSeparator": ".",
+                "callSnippet": true,
+                "postfix": "@",
+                "baseFunctionIncludesName": true
+        },
         "diagnostics": {
+                "enable": true,
+                "disable": [],
+                "enables": [],
                 "globals": ["Snacks"],
+                "globalsRegex": [],
                 "severity": {
                         "undefined-global": "warning",
                         "unused-local": "information"
-                }
+                },
+                "diagnosticInterval": 500
+        },
+        "doc": {
+                "syntax": "md"
+        },
+        "documentColor": {
+                "enable": true
+        },
+        "hover": {
+                "enable": true
+        },
+        "hint": {
+                "enable": true,
+                "paramHint": true,
+                "indexHint": true,
+                "localHint": true,
+                "overrideHint": true,
+                "metaCallHint": true
+        },
+        "inlineValues": {
+                "enable": true
+        },
+        "references": {
+                "enable": true,
+                "fuzzySearch": true,
+                "shortStringSearch": false
+        },
+        "reformat": {
+                "externalTool": null,
+                "externalToolRangeFormat": null,
+                "useDiff": false
+        },
+        "resource": {
+                "paths": []
         },
         "runtime": {
+                "version": "LuaLatest",
+                "requireLikeFunction": [],
+                "frameworkVersions": [],
+                "extensions": [],
                 "requirePattern": [
                         "lua/?.lua",
                         "lua/?/init.lua",
                         "?/lua/?.lua",
                         "?/lua/?/init.lua"
                 ],
-                "version": "LuaJIT"
-        },
-        "strict": {
-                "arrayIndex": false,
-                "docBaseConstMatchBaseType": false,
-                "metaOverrideFileDefine": false,
-                "requirePath": false,
-                "typeCall": false
-        },
-        "hint": {
-                "enable": true,
-                "enumParamHint": true,
-                "indexHint": true,
-                "localHint": true,
-                "metaCallHint": true,
-                "overrideHint": true,
-                "paramHint": true
-        },
-        "hover": {
-                "enable": true
-        },
-        "codeLens": {
-                "enable": true
+                "classDefaultCall": {
+                        "functionName": "",
+                        "forceNonColon": false,
+                        "forceReturnSelf": false
+                },
+                "nonstandardSymbol": [],
+                "special": {}
         },
         "semanticTokens": {
                 "enable": false
         },
-        "inlineValues": {
-                "enable": true
+        "signature": {
+                "detailSignatureHelper": true
         },
-        "documentColor": {
-                "enable": true
+        "strict": {
+                "requirePath": false,
+                "typeCall": false,
+                "arrayIndex": true,
+                "metaOverrideFileDefine": true,
+                "docBaseConstMatchBaseType": true
         },
         "workspace": {
-                "enableReindex": true,
-                "encoding": "utf-8",
                 "ignoreDir": [],
                 "ignoreGlobs": ["**/*_spec.lua"],
                 "library": [
@@ -58,9 +102,11 @@
                         "$LLS_Addons/luvit",
                         "${3rd}/luv/library"
                 ],
-                "moduleMap": [],
+                "workspaceRoots": [],
                 "preloadFileSize": 0,
+                "encoding": "utf-8",
+                "moduleMap": [],
                 "reindexDuration": 5000,
-                "workspaceRoots": []
+                "enableReindex": true
         }
 }

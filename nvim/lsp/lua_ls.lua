@@ -1,7 +1,7 @@
 return {
-        cmd                 = { "lua-language-server", "--force-accept-workspace" },
-        filetypes           = { "lua" },
-        root_markers        = {
+        cmd          = { "lua-language-server", "--force-accept-workspace" },
+        filetypes    = { "lua" },
+        root_markers = {
                 ".luarc.json",
                 ".luarc.jsonc",
                 ".luacheckrc",
@@ -12,7 +12,7 @@ return {
                 ".git",
         },
         ---[[,
-        on_init             = function(client)
+        on_init      = function(client)
                 if client.workspace_folders then
                         local path = client.workspace_folders[1].name
                         if
@@ -40,8 +40,27 @@ return {
                 })
         end,
         --]]
-        settings            = {
-                Lua = {
+        settings     = {
+                completion    = {
+                        callSnippet = "Both",
+                        postfix     = "@",
+                        showWord    = "Enable",
+                },
+                hint          = {
+                        enable         = true,
+                        awaitPropagate = true,
+                        setType        = true,
+                },
+                hover         = { enable = false },
+                signatureHelp = { enable = false },
+                semantic      = {
+                        enable     = true,
+                        annotation = true,
+                        keyword    = true,
+                        variable   = true,
+                },
+                telemetry     = { enable = false },
+                Lua           = {
                         diagnostics = {
                                 disable = { "trailing-space", "unused-function", "lowercase-global" },
                                 -- workspaceEvent = "OnSave",
