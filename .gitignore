@@ -1,19 +1,19 @@
 /*
 !/.bash_profile
+!/.bash_profile
+!/.bashrc
 !/.bashrc
 !/.clang-format
+!/db.zo
 !/.editorconfig
 !/.gitconfig
 !/.gitignore
+!/import.json
+!/mimeapps.list
 !/.p10k.zsh
 !/.prettierrc.json
-!/.zshrc
-!/.bash_profile
-!/.bashrc
-!/mimeapps.list
-!/db.zo
-!/import.json
 !/userstyle.less
+!/.zshrc
 
 !/bat/
 !/bottom/
@@ -45,7 +45,3 @@
 !/yazi/
 !/yt-dlg/
 !/zathura/
-!/fkz4av6o.default-default/chrome/
-!/fkz4av6o.default-default/prefs.js
-!/fkz4av6o.default-default/user.js
-!/fkz4av6o.default-default/extensions/
