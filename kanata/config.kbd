@@ -136,14 +136,14 @@
         spc ret
 
         q S-'
-        w S-9
-        e S-0
+        w [
+        e ]
         r '
 
-        a [
+        a S-9
         s S-[
         d S-]
-        f ]
+        f S-0
 
         z S-,
         x S-.

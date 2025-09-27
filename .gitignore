@@ -16,6 +16,9 @@
 !/cava/
 !/clangd/
 !/dunst/
+/dunst/*
+!/dunst/dunst.conf
+!/dunst/dunstrc
 !/emmylua_ls/
 !/fastfetch/
 !/ghostty/
@@ -30,7 +33,6 @@
 !/quickshell/
 !/rofi/
 !/swappy/
-!/sway/
 /systemd/*
 /systemd/user/default.target.wants
 /systemd/user/sockets.target.wants
@@ -46,4 +48,3 @@
 !/wireplumber/
 !/yazi/
 !/yt-dlg/
-!/zathura/
