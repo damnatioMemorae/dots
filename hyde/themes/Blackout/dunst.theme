@@ -1,0 +1,91 @@
+$HOME/.config/dunst/dunstrc && killall dunst
+[global]
+        monitor                       = 0
+        follow                        = mouse
+        width                         = (0, 300)
+        height                        = 300
+        origin                        = top
+        offset                        = 40x40
+        scale                         = 0
+        notification_limit            = 20
+        progress_bar                  = true
+        progress_bar_height           = 10
+        progress_bar_frame_width      = 0
+        progress_bar_min_width        = 125
+        progress_bar_max_width        = 250
+        progress_bar_corner_radius    = 4
+        icon_corner_radius            = 0
+        indicate_hidden               = yes
+        transparency                  = 60
+        separator_height              = 2
+        padding                       = 8
+        horizontal_padding            = 8
+        text_icon_padding             = 10
+        frame_width                   = 0
+        gap_size                      = 5
+        separator_color               = auto
+        sort                          = yes
+        font                          = Monocraft 10
+        line_height                   = 3
+        markup                        = full
+        format                        = "%s\n%b"
+        alignment                     = left
+        vertical_alignment            = center
+        show_age_threshold            = 60
+        ellipsize                     = start
+        ignore_newline                = no
+        stack_duplicates              = true
+        hide_duplicate_count          = false
+        show_indicators               = yes
+        icon_theme                    = "Tela-circle-dracula"
+        icon_position                 = left
+        min_icon_size                 = 12
+        max_icon_size                 = 50
+        icon_path                     = /home/q/.icons/Tela-circle-dracula/16/actions:/home/q/.icons/Tela-circle-dracula/16/apps:/home/q/.icons/Tela-circle-dracula/16/devices:/home/q/.icons/Tela-circle-dracula/16/mimetypes:/home/q/.icons/Tela-circle-dracula/16/panel:/home/q/.icons/Tela-circle-dracula/16/places:/home/q/.icons/Tela-circle-dracula/16/status
+        sticky_history                = no
+        history_length                = 20
+        dmenu                         = /usr/bin/rofi -config "/home/q/.config/rofi/notification.rasi" -dmenu -p dunst:
+        browser                       = /usr/bin/xdg-open
+        always_run_script             = true
+        title                         = Dunst
+        class                         = Dunst
+        corner_radius                 = 0
+        ignore_dbusclose              = false
+        force_xwayland                = false
+        force_xinerama                = false
+        mouse_left_click              = context, close_current
+        mouse_middle_click            = do_action, close_current
+        mouse_right_click             = close_all
+
+        [experimental]
+        per_monitor_dpi               = false
+
+        [Type-1]
+        appname                       = "t1"
+        format                        = "<b>%s</b>"
+
+        [Type-2]
+        appname                       = "t2"
+        format                        = "<span size="200%">%s</span>\n%b"
+
+        [Type-3]
+        appname                       = "t3"
+        format                        = "<span size="300%">%s</span>\n%b"
+
+        [urgency_critical]
+        background                    = "#281d29"
+        foreground                    = "#f38ba8"
+        frame_color                   = "#281d29"
+        timeout                       = 0
+
+        [urgency_low]
+        background                    = "#21252f"
+        foreground                    = "#add8e6"
+        frame_color                   = "#21252f"
+        timeout                       = 5
+
+        [urgency_normal]
+        background                    = "#21252f"
+        foreground                    = "#add8e6"
+        frame_color                   = "#21252f"
+        timeout                       = 5
